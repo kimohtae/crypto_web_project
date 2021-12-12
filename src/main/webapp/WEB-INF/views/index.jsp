@@ -8,9 +8,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    
+    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    <script>
+        $(function(){
+            
+        })
+    </script>
+        
+
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
-    <h1>메인페이지</h1>
+    <div class="main_container">
+        <div class="main_upper_wrap">
+            <a href="#">News</a>
+            <a href="#">Strategy</a>
+            <a href="#">Community</a>
+            <button><i class="fas fa-ellipsis-h"></i></button>
+            <div id="underline"></div>
+        </div>
+        <div class="main_mid_wrap">
+
+        </div>
+    </div>
 </body>
 </html>
