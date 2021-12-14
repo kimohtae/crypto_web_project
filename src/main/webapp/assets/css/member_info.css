@@ -1,4 +1,4 @@
-/* index.css */
+/* member_info.css */
 
 .main_container{
     width: 1130px;
@@ -52,73 +52,59 @@
     transition: 0.2s;
 }
 .page_container{
-    width: 1000px; margin: 0 auto;
+    width: 1100px; margin: 0 auto;
     position: relative;
     top: 0;
     height: 1381px;
 }
-.news_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
+
+.member_page_wrap{
+    width: 940px; margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    left: 0;
     background-color: rgb(235, 235, 235);
     border-radius: 10px;
-    height: 1381px;
+    height: 1321px;
     box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
+    opacity: 100%;
+    
     transition: 1s;
 }
-.stra_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
+.member_page_wrap.active{
+    width: 1040px; 
     top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
+    box-shadow: none;
 }
-.com_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
+.member_list_table{
+    display: block;
+    opacity: 0%;
+    margin: 20px;
+    transition-delay: 1s;
+    transition-duration: 1s;
+    
 }
-.admin_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
-}
-.news_page_wrap.active{
+.member_list_table.active{
     opacity: 100%;
-    left: 0;
 }
-.stra_page_wrap.active{
-    opacity: 100%;
-    left: 0;
+
+.member_list_table th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
 }
-.com_page_wrap.active{
-    opacity: 100%;
-    left: 0;
+.member_list_table td{
+    border-bottom: 1px solid #999;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
 }
-.admin_page_wrap.active{
-    opacity: 100%;
-    left: 0;
-}
+
+
+
 

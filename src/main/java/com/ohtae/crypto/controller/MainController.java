@@ -1,12 +1,27 @@
 package com.ohtae.crypto.controller;
 
+import com.ohtae.crypto.service.MemberService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
+    @Autowired
+    MemberService service;
+
     @GetMapping("/")
     public String getMainPage(){
         return "/index";
+    }
+    @GetMapping("/admin/member")
+    public String getMemberInfoPage(Model model ,@RequestParam @Nullable Integer offset){
+        model.addAttribute("data", service.selectMemberList(offset));
+
+        return "/admin_page/member_info";
     }
 }
