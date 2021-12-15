@@ -28,4 +28,48 @@ public class MemberService {
 
         return map;
     }
+
+    public Map<String, Object> insertMemberInfo(MemberInfoVO data){
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
+        if(data.getMi_id().equals("")){
+            map.put("status", false);
+            map.put("message", "아이디를 입력해 주세요");
+            return map;
+        }
+        if(data.getMi_email().equals("")){
+            map.put("status", false);
+            map.put("message", "이메일을 입력해 주세요");
+            return map;
+        }
+        if(data.getMi_phone().equals("")){
+            map.put("status", false);
+            map.put("message", "전화번호를 입력해 주세요");
+            return map;
+        }
+        if(data.getMi_address().equals("")){
+            map.put("status", false);
+            map.put("message", "주소를 입력해 주세요");
+            return map;
+        }
+        if(data.getMi_birth().equals("")){
+            map.put("status", false);
+            map.put("message", "생년월일을 입력해 주세요");
+            return map;
+        }
+        try{
+            Mmapper.insertMemberInfo(data);
+        }catch(Exception e){
+            map.put("status", false);
+            map.put("message", "잘못된 입력입니다.");
+            return map;
+        }
+        
+        map.put("status", true);
+        map.put("message", "추가 되었습니다.");
+        return map;
+    }
+
+    public void deleteMemberInfo(Integer seq){
+        Mmapper.deleteMemberInfo(seq);
+    }
 }

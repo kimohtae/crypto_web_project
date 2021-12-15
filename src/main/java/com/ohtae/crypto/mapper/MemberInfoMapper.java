@@ -10,4 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberInfoMapper {
     public List<MemberInfoVO> selectMemberList(Integer offset);
     public Integer selectMemberCounts();
+
+    public void insertMemberInfo(MemberInfoVO data);
+
+    public void deleteMemberInfo(Integer seq);
+
 }

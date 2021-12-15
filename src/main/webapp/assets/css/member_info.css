@@ -42,15 +42,7 @@
     color: #fff;
     cursor: pointer;
 }
-#underline{
-    position: absolute;
-    width: 0;
-    background-color: black;
-    top: 0;
-    left: 0;
-    height: 0;
-    transition: 0.2s;
-}
+
 .page_container{
     width: 1100px; margin: 0 auto;
     position: relative;
@@ -78,7 +70,11 @@
     box-shadow: none;
 }
 .member_list_table{
-    display: block;
+    table-layout: fixed;
+    word-break: break-all;
+    height: auto;
+
+    width: 1000px;
     opacity: 0%;
     margin: 20px;
     transition-delay: 1s;
@@ -89,22 +85,142 @@
     opacity: 100%;
 }
 
+
 .member_list_table th{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    width: 114px;
     font-weight: 500;
 }
 .member_list_table td{
     border-bottom: 1px solid #999;
     font-size: 14px;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
     vertical-align: middle;
+}
+.member_list_table th:first-child{
+    width: 50px;
+}
+
+
+
+.input_box{
+    background-color: rgb(177, 177, 177);
+    display: none;
+}
+.input_box input{
+    width: 100px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 5px;
+    display: inline-block;
+    height: 25px;
+    
+}
+.input_box td{
+    color: rgba(253, 253, 253, 0.714);
+}
+.input_box.active{
+    display: table-row;
+}
+.modify_box{
+    background-color: rgb(177, 177, 177);
+    display: none;
+}
+.modify_box input{
+    width: 100px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 5px;
+    display: inline-block;
+    height: 25px;
+    
+}
+.modify_box td{
+    color: rgba(253, 253, 253, 0.714);
+}
+.modify_box.active{
+    display: table-row;
 }
 
 
 
 
+
+#add_btn, #delete_btn, #cancel_btn, #modify_btn{
+    background-color: #eee;
+    color: rgb(0, 0, 0);
+    width: 70px; height: 30px;
+    font-size: 16px; font-weight: 600;
+    border: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    transition: 0.1s;
+    margin: 5px;
+}
+#nodata{
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin: 4px;
+    color: gray;
+}
+
+
+
+.button_container{
+    width: 100%;
+    height: 20px;
+}
+.button_wrap{
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+}
+
+#modify_btn{
+    background-color: #ddd;
+    width: 60px;
+    margin: 5px;
+    display: none;
+}
+
+#add_btn{
+    color: rgba(0, 0, 255, 0.544);
+    width: 60px;
+    margin: 5px;
+}
+#add_btn.active{
+    background-color: #ddd;
+}
+#delete_btn{
+    color: rgba(255, 0, 0, 0.544);
+    width: 60px;
+}
+#cancel_btn{
+    color: rgba(0, 0, 0, 0.544);
+    width: 60px;
+    margin: 5px;
+}
+
+#add_btn:hover, #delete_btn:hover, #cancel_btn:hover, #modify_btn:hover{
+    background-color: rgba(148, 89, 0, 0.244);
+}
+.member_list_table tbody .check_box{
+    display: none;
+}
+.member_list_table .member_data:hover{
+    background-color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+.member_list_table .member_data.active{
+    background-color: rgb(218, 218, 218);
+    
+}
