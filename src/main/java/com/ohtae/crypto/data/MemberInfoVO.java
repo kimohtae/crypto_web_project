@@ -11,9 +11,10 @@ public class MemberInfoVO {
     private String mi_pwd;
     private String mi_email;
     private String mi_phone;
-    private String mi_address;
+    private String mi_name;
     private String mi_image;
     private String mi_birth;
     private Date mi_reg_dt;
-    private Date mi_mod_dt;
+    private Integer mi_status;
+    
 }

@@ -19,8 +19,14 @@ public class MainController {
         return "/index";
     }
     @GetMapping("/admin/member")
-    public String getMemberInfoPage(Model model ,@RequestParam @Nullable Integer offset){
-        model.addAttribute("data", service.selectMemberList(offset));
+    public String getMemberInfoPage(
+        Model model ,
+        @RequestParam @Nullable Integer offset,
+        @RequestParam @Nullable String newOrder,
+        @RequestParam @Nullable String order,
+        @RequestParam @Nullable String adesc
+        ){
+        model.addAttribute("data", service.selectMemberList(offset,newOrder,order,adesc));
 
         return "/admin_page/member_info";
     }

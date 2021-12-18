@@ -5,7 +5,10 @@ $(function(){
 
     $(".member_page_wrap").addClass("active")
     $(".member_list_table").addClass("active")
+    let i = ($("#sending").attr("offset")/30)+1;
+    $(".pager_wrap #"+i).addClass("current")
     
+
     let selected = new Set();
     $(".member_list_table .member_data").click(function(){
         let check = $(this).attr("tr-seq");
@@ -27,18 +30,19 @@ $(function(){
     
     
     $("#add_btn").click(function(){
+        selected = new Set();
+        $(".member_list_table .member_data").prop("checked",false)
+        $(".member_list_table .member_data").removeClass("active")
+
         if(AddBtn){
             $(".input_box").addClass("active")
             $("#add_btn").addClass("active")
 
-            
-            selected = new Set();
             $("#add_btn").html("저장")
             $(".member_list_table th:nth-child(8)").html("비밀번호")
             $(".member_list_table th:nth-child(9)").html("비밀번호 확인")
-            $(".member_list_table .member_data").prop("checked",false)
-            $(".member_list_table .member_data").removeClass("active")
-            AddBtn=false;
+
+            AddBtn = false;
         }else{
             if(confirm("저장하시겠습니까?")==false)return;
 
@@ -55,7 +59,7 @@ $(function(){
                 "mi_phone":$("#input_phone").val(),
                 "mi_birth":$("#input_birth").val(),
                 "mi_email":$("#input_email").val(),
-                "mi_address":$("#input_address").val(),
+                "mi_name":$("#input_name").val(),
                 "mi_pwd":$("#input_pwd").val()
             }
 
@@ -77,26 +81,49 @@ $(function(){
     
     $(".member_list_table .member_data").dblclick(function(){
         let select = $(this).attr("tr-seq")*10000000000
+        selected = new Set();
         $(".member_list_table .member_data").prop("checked",false)
         $(".member_list_table .member_data").removeClass("active")
-        $(".input_box").removeClass("active")
 
         if(modBtn){
             $("#"+select).addClass("active")
-            modBtn =false;
+            modBtn = false;
             $("#add_btn").css("display","none")
             $("#modify_btn").css("display","inline-block")
+    
+            $(".member_list_table th:nth-child(8)").html("이미지")
+            $(".member_list_table th:nth-child(9)").html("등록일")
+
+            $(".input_box").removeClass("active")
+            $("#add_btn").removeClass("active")
+            AddBtn = true;
         }else{
             $("#"+select).removeClass("active")
-            modBtn =true;
+            $(".input_box").removeClass("active")
+            $("#add_btn").removeClass("active")
+            $("#add_btn").html("추가")
+            AddBtn = true;
+    
             $("#add_btn").css("display","inline-block")
             $("#modify_btn").css("display","none")
+            $(".member_list_table .modify_box").removeClass("active")
+            modBtn = true;
+    
 
+    
+            $("#input_id").val("")
+            $("#input_phone").val("")
+            $("#input_birth").val("")
+            $("#input_email").val("")
+            $("#input_name").val("")
+            $("#input_pwd").val("")
+            $("#input_pwd_con").val("")
+    
             $("#modify_id").val("")
             $("#modify_phone").val("")
             $("#modify_birth").val("")
             $("#modify_email").val("")
-            $("#modify_address").val("")
+            $("#modify_name").val("")
         }
 
     })
@@ -104,26 +131,27 @@ $(function(){
 
 
     $("#cancel_btn").click(function(){
+        selected = new Set();
         $(".member_list_table .member_data").prop("checked",false)
         $(".member_list_table .member_data").removeClass("active")
         $(".input_box").removeClass("active")
         $("#add_btn").removeClass("active")
         $("#add_btn").html("추가")
-        AddBtn=true;
+        AddBtn = true;
 
         $("#add_btn").css("display","inline-block")
         $("#modify_btn").css("display","none")
         $(".member_list_table .modify_box").removeClass("active")
-        modBtn =true;
+        modBtn = true;
 
-        $(".member_list_table th:nth-child(8)").html("등록일")
-        $(".member_list_table th:nth-child(9)").html("변경일")
+        $(".member_list_table th:nth-child(8)").html("이미지")
+        $(".member_list_table th:nth-child(9)").html("등록일")
 
         $("#input_id").val("")
         $("#input_phone").val("")
         $("#input_birth").val("")
         $("#input_email").val("")
-        $("#input_address").val("")
+        $("#input_name").val("")
         $("#input_pwd").val("")
         $("#input_pwd_con").val("")
 
@@ -131,11 +159,11 @@ $(function(){
         $("#modify_phone").val("")
         $("#modify_birth").val("")
         $("#modify_email").val("")
-        $("#modify_address").val("")
+        $("#modify_name").val("")
     })
 
     $("#delete_btn").click(function(){
-        if(selected.size==0){
+        if(selected.size == 0){
             alert("선택된 목록이 없습니다.")
         }else{
             if(confirm("선택된 정보가 모두 삭제됩니다. \n 정말 삭제하시겠습니까?")==false)return;
@@ -151,5 +179,27 @@ $(function(){
             }
         }
     })
+    $(".member_list_table thead span").click(function(){
+        let newOrder = $(this).attr("order-by");
+        let order = $("#sending").attr("order");
+        let adesc = $("#sending").attr("adesc");
+        location.href="/admin/member?newOrder="+newOrder+"&order="+order+"&adesc="+adesc
+    })
+    $("#page_left_move").click(function(){
+        let order = $("#sending").attr("order");
+        let adesc = $("#sending").attr("adesc");
+        let offset = $("#sending").attr("offset")-30;
+        location.href="/admin/member?offset="+offset+"&newOrder="+order+"&adesc="+adesc
+    })
+    $("#page_right_move").click(function(){
+        let order = $("#sending").attr("order");
+        let adesc = $("#sending").attr("adesc");
+        let offset = $("#sending").attr("offset")*1 + 30;
+        
+        location.href="/admin/member?offset="+offset+"&newOrder="+order+"&adesc="+adesc
+    })
 
+
+
+ 
 })

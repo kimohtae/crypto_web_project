@@ -2,8 +2,9 @@
 
 <mapper namespace="com.ohtae.crypto.mapper.MemberInfoMapper">
     <select id="selectMemberList" resultType="com.ohtae.crypto.data.MemberInfoVO">
-        select mi_seq,mi_id,mi_email,mi_image,mi_phone,mi_address,mi_birth,mi_reg_dt,mi_mod_dt
-        from member_info limit 20 offset #{offset}
+        select mi_seq,mi_id,mi_email,mi_image,mi_phone,mi_name,mi_birth,mi_reg_dt,mi_status
+        from member_info order by ${order} limit 30 offset #{offset}
+        
     </select>
     <select id="selectMemberCounts" resultType="java.lang.Integer">
         select count(*) from member_info
@@ -11,8 +12,8 @@
 
     
     <insert id="insertMemberInfo">
-        insert into member_info(mi_id,mi_pwd,mi_email,mi_phone,mi_address,mi_birth) 
-        values(#{mi_id},#{mi_pwd},#{mi_email},#{mi_phone},#{mi_address},#{mi_birth})
+        insert into member_info(mi_id,mi_pwd,mi_email,mi_phone,mi_name,mi_birth) 
+        values(#{mi_id},#{mi_pwd},#{mi_email},#{mi_phone},#{mi_name},#{mi_birth})
     </insert>
 
 

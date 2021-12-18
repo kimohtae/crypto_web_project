@@ -1,5 +1,6 @@
 package com.ohtae.crypto.service;
 
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,13 +16,30 @@ public class MemberService {
     @Autowired
     MemberInfoMapper Mmapper;
 
-    public Map<String, Object> selectMemberList(Integer offset){
+    public Map<String, Object> selectMemberList(Integer offset,String newOrder, String order,String adesc){
         Map<String, Object> map = new LinkedHashMap<String,Object>();
-        if(offset==null)offset=0;
-        List<MemberInfoVO> list = Mmapper.selectMemberList(offset);
-        Integer cnt = Mmapper.selectMemberCounts();
-        Integer page = cnt/20+(cnt%20==0?0:1);
+        if(newOrder == null|| newOrder.equals("")){
+            newOrder="mi_seq desc";    
+            if(offset == null) offset=0;
+        }else{
+            if(offset == null){
+                offset=0;
+                if(newOrder.equals(order) && adesc.equals("asc")){
+                    adesc="desc";
+                }else{
+                    adesc="asc";
+                }
+            }
+            map.put("order", newOrder);
+            map.put("adesc", adesc);    
+            newOrder = newOrder+ " " +adesc;
+        }
+            
 
+        List<MemberInfoVO> list = Mmapper.selectMemberList(offset, newOrder);
+        Integer cnt = Mmapper.selectMemberCounts();
+        Integer page = cnt/30+(cnt%30==0?0:1);
+        map.put("offset", offset);
         map.put("list", list);
         map.put("cnt", cnt);
         map.put("page", page);
@@ -46,9 +64,9 @@ public class MemberService {
             map.put("message", "전화번호를 입력해 주세요");
             return map;
         }
-        if(data.getMi_address().equals("")){
+        if(data.getMi_name().equals("")){
             map.put("status", false);
-            map.put("message", "주소를 입력해 주세요");
+            map.put("message", "이름을 입력해 주세요");
             return map;
         }
         if(data.getMi_birth().equals("")){

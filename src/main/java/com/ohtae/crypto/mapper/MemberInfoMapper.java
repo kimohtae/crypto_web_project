@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface MemberInfoMapper {
-    public List<MemberInfoVO> selectMemberList(Integer offset);
+    public List<MemberInfoVO> selectMemberList(Integer offset, String order);
     public Integer selectMemberCounts();
 
     public void insertMemberInfo(MemberInfoVO data);
