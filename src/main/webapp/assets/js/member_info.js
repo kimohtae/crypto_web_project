@@ -80,6 +80,7 @@ $(function(){
     
     
     $(".member_list_table .member_data").dblclick(function(){
+        let selectOri = $(this).attr("tr-seq")
         let select = $(this).attr("tr-seq")*10000000000
         selected = new Set();
         $(".member_list_table .member_data").prop("checked",false)
@@ -91,12 +92,52 @@ $(function(){
             $("#add_btn").css("display","none")
             $("#modify_btn").css("display","inline-block")
     
-            $(".member_list_table th:nth-child(8)").html("이미지")
+            $(".member_list_table th:nth-child(8)").html("상태")
             $(".member_list_table th:nth-child(9)").html("등록일")
 
             $(".input_box").removeClass("active")
             $("#add_btn").removeClass("active")
             AddBtn = true;
+
+            $.ajax({
+                url:"/admin/member/select?seq="+selectOri,
+                type:"get",
+                success:function(r){
+                    $("#"+select+" .mod_id").val(r.mi_id)
+                    $("#"+select+" .mod_phone").val(r.mi_phone)
+                    $("#"+select+" .mod_birth").val(r.mi_birth)
+                    $("#"+select+" .mod_email").val(r.mi_email)
+                    $("#"+select+" .mod_name").val(r.mi_name)
+                    $("#"+select+" .mod_image").val(r.mi_image)
+                }
+            })
+
+            $("#modify_btn").click(function(){
+                let data = {
+                    "mi_seq":selectOri,
+                    "mi_id":$("#"+select+" .mod_id").val(),
+                    "mi_name":$("#"+select+" .mod_name").val(),
+                    "mi_phone":$("#"+select+" .mod_phone").val(),
+                    "mi_birth":$("#"+select+" .mod_birth").val(),
+                    "mi_email":$("#"+select+" .mod_email").val(),
+                    "mi_image":$("#"+select+" .mod_image").val()
+                }
+                console.log(data)
+                $.ajax({
+                    url:"/admin/member/update",
+                    type:"patch",
+                    contentType:"application/json",
+                    data:JSON.stringify(data),
+                    success:function(r){
+                        alert(r.message)
+                        if(r.status){
+                            location.reload()
+                        }
+                    }
+                })
+        
+        
+            })
         }else{
             $("#"+select).removeClass("active")
             $(".input_box").removeClass("active")
@@ -109,8 +150,6 @@ $(function(){
             $(".member_list_table .modify_box").removeClass("active")
             modBtn = true;
     
-
-    
             $("#input_id").val("")
             $("#input_phone").val("")
             $("#input_birth").val("")
@@ -119,16 +158,15 @@ $(function(){
             $("#input_pwd").val("")
             $("#input_pwd_con").val("")
     
-            $("#modify_id").val("")
-            $("#modify_phone").val("")
-            $("#modify_birth").val("")
-            $("#modify_email").val("")
-            $("#modify_name").val("")
+            $("#mod_id").val("")
+            $("#mod_phone").val("")
+            $("#mod_birth").val("")
+            $("#mod_email").val("")
+            $("#mod_name").val("")
+            $("#mod_image").val("")
         }
 
     })
-
-
 
     $("#cancel_btn").click(function(){
         selected = new Set();
@@ -144,7 +182,7 @@ $(function(){
         $(".member_list_table .modify_box").removeClass("active")
         modBtn = true;
 
-        $(".member_list_table th:nth-child(8)").html("이미지")
+        $(".member_list_table th:nth-child(8)").html("상태")
         $(".member_list_table th:nth-child(9)").html("등록일")
 
         $("#input_id").val("")
@@ -162,6 +200,24 @@ $(function(){
         $("#modify_name").val("")
     })
 
+    $("#status_btn").click(function(){
+        let status = $("#status_cat").val();
+        if(selected.size == 0){
+            alert("선택된 목록이 없습니다.")
+        }else{
+            if(confirm("선택된 정보가 모두 변경됩니다. \n 정말 변경하시겠습니까?")==false)return;
+            
+            for (var seq of selected) {
+                $.ajax({
+                    url:"/admin/member/update/status?seq="+seq+"&status="+status,
+                    type:"patch",
+                    success:function(){
+                        location.reload()
+                    }
+                })
+            }
+        }
+    })
     $("#delete_btn").click(function(){
         if(selected.size == 0){
             alert("선택된 목록이 없습니다.")

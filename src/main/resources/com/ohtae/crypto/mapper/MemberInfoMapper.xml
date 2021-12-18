@@ -4,17 +4,40 @@
     <select id="selectMemberList" resultType="com.ohtae.crypto.data.MemberInfoVO">
         select mi_seq,mi_id,mi_email,mi_image,mi_phone,mi_name,mi_birth,mi_reg_dt,mi_status
         from member_info order by ${order} limit 30 offset #{offset}
-        
     </select>
     <select id="selectMemberCounts" resultType="java.lang.Integer">
         select count(*) from member_info
     </select>
-
+    <select id="selectMemberInfo" resultType="com.ohtae.crypto.data.MemberInfoVO">
+        select mi_id,mi_email,mi_image,mi_phone,mi_name,mi_birth
+        from member_info where mi_seq = #{mi_seq}
+    </select>
+    <select id="selectRecentSeq" resultType="java.lang.Integer">
+        select mi_seq from member_info order by mi_seq desc limit 1
+    </select>
+    
     
     <insert id="insertMemberInfo">
         insert into member_info(mi_id,mi_pwd,mi_email,mi_phone,mi_name,mi_birth) 
         values(#{mi_id},#{mi_pwd},#{mi_email},#{mi_phone},#{mi_name},#{mi_birth})
     </insert>
+    <insert id="insertMemberHis">
+        insert into member_history(mh_content,mh_type,mh_mi_seq)
+        values(#{mh_content},#{mh_type},#{mh_mi_seq})
+    </insert>
+
+
+
+    <update id="updateMemberInfo">
+        update member_info set 
+        mi_id=#{mi_id},mi_email=#{mi_email},mi_phone=#{mi_phone},mi_name=#{mi_name},
+        mi_birth=#{mi_birth}, mi_image=#{mi_image} 
+        where mi_seq=#{mi_seq}
+    </update>
+    <update id="updateMemberStatus">
+        update member_info set mi_status=#{status}
+        where mi_seq=#{seq}
+    </update>
 
 
 

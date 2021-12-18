@@ -61,8 +61,8 @@
                             <th>전화번호<span order-by="mi_phone"><i class="fas fa-arrows-alt-v"></i></span></th>
                             <th>생년월일<span order-by="mi_birth"><i class="fas fa-arrows-alt-v"></i></span></th>
                             <th>이메일<span order-by="mi_email"><i class="fas fa-arrows-alt-v"></i></span></th>
-                            <th>상태<span order-by="mi_status"><i class="fas fa-arrows-alt-v"></i></span></th>
                             <th>이미지<span order-by="mi_image"><i class="fas fa-arrows-alt-v"></i></span></th>
+                            <th>상태<span order-by="mi_status"><i class="fas fa-arrows-alt-v"></i></span></th>
                             <th>등록일<span order-by="mi_reg_dt"><i class="fas fa-arrows-alt-v"></i></span></th>
                         </tr>
                     </thead>
@@ -74,7 +74,7 @@
                             <td><input type="text" id="input_phone" placeholder="ex) 01012345678"></td>
                             <td><input type="text" id="input_birth" placeholder="ex) 990814"></td>
                             <td><input type="text" id="input_email" placeholder="ex) mail@mail.com"></td>
-                            <td>상태</td>
+                            <td>이미지</td>
                             <td><input type="password" id="input_pwd" placeholder="비밀번호"></td>
                             <td><input type="password" id="input_pwd_con" placeholder="비밀번호확인"></td>
                         </tr>
@@ -91,6 +91,7 @@
                                 <td>${li.mi_phone}</td>
                                 <td>${li.mi_birth}</td>
                                 <td>${li.mi_email}</td>
+                                <td>${li.mi_image}</td>
                                 <td class="status_dec">
                                     <c:if test="${li.mi_status == 1}">
                                         <span style="color: blue">신규</span> 
@@ -99,25 +100,24 @@
                                         <span style="color: green">정상</span> 
                                     </c:if>
                                     <c:if test="${li.mi_status == 3}">
-                                        <span style="color: gray">정지</span> 
+                                        <span style="color: rgb(0, 0, 0)">정지</span> 
                                     </c:if>
                                     <c:if test="${li.mi_status == 4}">
                                         <span style="color: red">탈퇴</span> 
                                     </c:if>
                                 </td>
-                                <td>${li.mi_image}</td>
                                 <td>${li.mi_reg_dt}<input type="checkbox" class="check_box">
                                 </td>
                             </tr>
-                            <tr class="modify_box"  id="${li.mi_seq*10000000000}">
+                            <tr class="modify_box" tr-seq="${li.mi_seq}" id="${li.mi_seq*10000000000}">
                                 <td>번호</td>
                                 <td><input type="text" class="mod_id" placeholder="아이디"></td>
                                 <td><input type="text" class="mod_name" placeholder="이름"></td>
                                 <td><input type="text" class="mod_phone" placeholder="ex) 01012345678"></td>
                                 <td><input type="text" class="mod_birth" placeholder="ex) 990814"></td>
                                 <td><input type="text" class="mod_email" placeholder="ex) mail@mail.com"></td>
-                                <td><input type="text" class="mod_status" placeholder="신규,정상,정지,탈퇴"></td>
-                                <td><input type="text" class="mod_image" placeholder="이미지" value="기본이미지"></td>
+                                <td><input type="text" class="mod_image" placeholder="이미지"></td>
+                                <td>상태</td>
                                 <td>등록일</td>
                             </tr>
                         </c:forEach>
