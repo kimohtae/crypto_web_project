@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohtae.crypto.mapper.PostInfoMapper">
+    <select id="selectPostList" resultType="com.ohtae.crypto.data.PostInfoVO">
+        select 
+        	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
+        	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
+        	,mi_name,ti_table,iti_type
+        from
+        (select 
+        	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
+        	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
+        	,mi_name,ti_table
+        from
+        (select 
+        	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
+        	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
+        	,mi_name
+        from post_info a join member_info b on a.pi_mi_seq = b.mi_seq)c 
+            join table_info d on c.pi_ti_seq = d.ti_seq)e
+            join investment_type_info f on e.pi_iti_seq = f.iti_seq 
+        where #{type} like #{keyword}
+        order by pi_seq desc
+        limit 20 offset #{offset} 
+    </select>
+</mapper>

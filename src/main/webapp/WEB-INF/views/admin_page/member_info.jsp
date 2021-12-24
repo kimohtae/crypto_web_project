@@ -20,9 +20,9 @@
     <div class="main_container">
         <div class="main_upper_wrap">
             <a href="/admin/member" id="member">Member</a>
-            <a href="#" id="">Table</a>
+            <a href="/admin/post" id="">Post</a>
             <button><i class="fas fa-ellipsis-h"></i></button>
-            <!-- 높이 같아야 함 -->
+            
         </div>
         <div class="page_container">
             <div class="member_page_wrap">

@@ -1,6 +1,7 @@
 package com.ohtae.crypto.controller;
 
 import com.ohtae.crypto.service.MemberService;
+import com.ohtae.crypto.service.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -11,9 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminController {
-    @Autowired
-    MemberService service;
-
+    @Autowired MemberService Mservice;
+    @Autowired PostService PService;
 
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
@@ -23,8 +23,20 @@ public class AdminController {
         @RequestParam @Nullable String order,
         @RequestParam @Nullable String adesc
         ){
-        model.addAttribute("data", service.selectMemberList(offset,newOrder,order,adesc));
+        model.addAttribute("data", Mservice.selectMemberList(offset,newOrder,order,adesc));
 
         return "/admin_page/member_info";
+    }
+
+    @GetMapping("/admin/post")
+    public String getPostInfoPage(
+        Model model,
+        @RequestParam @Nullable Integer offset,
+        @RequestParam @Nullable String keyword,
+        @RequestParam @Nullable String type
+        ){
+        model.addAttribute("data", PService.selectPostList(offset, keyword, type));
+        
+        return "/admin_page/post_info";
     }
 }
