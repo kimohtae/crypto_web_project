@@ -20,7 +20,7 @@
     <div class="head_container">
         <div class="head_wrap">
             <div class="head_left_box">
-                <a href="#">Crypto</a>
+                <a href="#">Investment</a>
             </div>
             <div class="head_right_box">
                 <div class="search_wrap">

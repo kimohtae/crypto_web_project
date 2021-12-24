@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MainController {
+public class AdminController {
     @Autowired
     MemberService service;
 
-    @GetMapping("/")
-    public String getMainPage(){
-        return "/index";
-    }
+
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
         Model model ,

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohtae.crypto.mapper.TableInfoMapper">
+    <select id="selectTableList" resultType="com.ohtae.crypto.data.TableInfoVO">
+        select * from table_info where ti_cat = #{keyword}
+        order by ti_seq 
+    </select>
+    <select id="selectTableInfo" resultType="com.ohtae.crypto.data.TableInfoVO">
+        select ti_seq,ti_cat,ti_type
+        from table_info where ti_seq = #{seq}
+    </select>
+    <select id="selectRecentSeq" resultType="java.lang.Integer">
+        select ti_seq from table_info order by ti_seq desc limit 1
+    </select>
+    
+    
+    <insert id="insertTableInfo">
+        insert into table_info(ti_cat,ti_type) 
+        values(#{ti_cat},#{ti_type}) 
+    </insert>
+    <insert id="insertTableHis">
+        insert into table_info_history(tih_content,tih_type,tih_ti_seq)
+        values(#{tih_content},#{tih_type},#{tih_ti_seq})
+    </insert>
+
+
+
+    <update id="updateTableCat">
+        update table_info set 
+        ti_cat=#{cat}
+        where ti_type=#{type}
+    </update>
+    <update id="updateTableType">
+        update table_info set 
+        ti_type=#{type}
+        where ti_cat=#{cat}
+    </update>
+
+
+
+    <delete id="deleteTableInfo">
+        delete from table_info where ti_seq = #{seq};
+    </delete>
+</mapper>
