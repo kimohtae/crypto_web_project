@@ -59,7 +59,7 @@
 }
 
 .member_page_wrap{
-    width: 940px; margin: 0 auto;
+    width: 1040px; margin: 0 auto;
     padding: 30px;
     position: relative;
     top: 40px;
@@ -73,7 +73,6 @@
     transition: 1s;
 }
 .member_page_wrap.active{
-    width: 1040px; 
     top: 0;
     box-shadow: none;
 }
@@ -81,13 +80,11 @@
     table-layout: fixed;
     word-break: break-all;
     height: auto;
-
     width: 1000px;
     opacity: 0%;
     margin: 20px;
     transition-delay: 1s;
     transition-duration: 1s;
-    
 }
 .member_list_table.active{
     opacity: 100%;

@@ -23,7 +23,9 @@ public class PostService {
         if(type==null) type="pi_title";
 
         map.put("list", Pmapper.selectPostList(offset, keyword, type));
-
+        Integer cnt = Pmapper.selectPostCounts(keyword, type);
+        Integer page = cnt/20 + (cnt%20>0?1:0);
+        map.put("page", page);
 
         return map;
     }

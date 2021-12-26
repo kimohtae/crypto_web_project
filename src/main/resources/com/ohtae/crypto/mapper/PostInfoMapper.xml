@@ -23,4 +23,8 @@
         order by pi_seq desc
         limit 20 offset #{offset} 
     </select>
+    <select id="selectPostCounts" resultType="java.lang.Integer">
+        select count(*) from post_info
+        where #{type} like #{keyword}
+    </select>
 </mapper>
