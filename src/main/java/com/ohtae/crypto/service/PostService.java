@@ -3,6 +3,7 @@ package com.ohtae.crypto.service;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.ohtae.crypto.data.PostInfoVO;
 import com.ohtae.crypto.mapper.PostInfoMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,8 @@ public class PostService {
 
         return map;
     }
+    public PostInfoVO selectPostInfo(Integer seq){
+        return Pmapper.selectPostInfo(seq);
+    }
+    
 }

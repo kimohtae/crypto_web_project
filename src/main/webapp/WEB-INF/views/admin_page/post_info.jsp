@@ -88,6 +88,21 @@
             </div>
         </div>
     </div>
+    <div class="popup_container" style="display: none;">
+        <div class="popup_wrap">
+            <div id="popup_number">번호:</div>
+            <div id="popup_author">작성자:</div>
+            <div id="popup_title">제목: ssssss</div>
+            <div id="content_wrap">
+                <div id="popup_content">내용</div>ddd
+            </div>
+            <div id="popup_cat">News/ Stock</div>
+            <div id="popup_status">조회:30000/추천:2500/상태:공개</div>
+            <div id="popup_reg_dt">등록일:</div>
+            <div id="popup_mod_dt">수정일:</div>
+
+        </div>
+    </div>
 </body>
 </html>
 
