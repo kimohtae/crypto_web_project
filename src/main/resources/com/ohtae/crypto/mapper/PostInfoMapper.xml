@@ -47,4 +47,20 @@
             join investment_type_info f on e.pi_iti_seq = f.iti_seq 
         where pi_seq = #{seq}
     </select>
+
+
+
+    <update id="updatePostToPublicStatus">
+        update post_info set pi_status = 1 where pi_seq = #{seq}
+    </update>
+    <update id="updatePostToPrivateStatus">
+        update post_info set pi_status = 2 where pi_seq = #{seq}
+    </update>
+
+
+
+
+    <delete id="deletePostInfo">
+        delete from post_info where pi_seq = #{seq}
+    </delete>
 </mapper>

@@ -34,4 +34,21 @@ public class PostService {
         return Pmapper.selectPostInfo(seq);
     }
     
+
+    public void updatePostToPrivateStatus(Integer seq){
+            Pmapper.updatePostToPrivateStatus(seq);
+    }
+    public void updatePostToPublicStatus(Integer seq){
+            Pmapper.updatePostToPublicStatus(seq);
+    }
+
+
+    public Map<String, Object> deletePostInfo(Integer seq){
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
+        Pmapper.deletePostInfo(seq);
+        map.put("status", true);
+        map.put("message", "삭제가 완료 되었습니다.");
+
+        return map;
+    }
 }

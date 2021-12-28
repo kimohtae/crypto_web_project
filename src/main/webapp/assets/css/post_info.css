@@ -270,32 +270,50 @@
     height: 570px;
     top: 80px;
     left: 10px;
-    padding: 35px 5px;
+    padding: 5px 5px 35px 5px;
     word-break: break-all;
     overflow-y: auto;
     overflow-x: hidden;
-}
-#popup_content{
-    top: -21px;
-    left:-21px;
-    width: 730px;
-    border-radius: 0;
-    border: none;
-    border-bottom: 0.1px dashed gray;
 }
 
 
 #popup_reg_dt{
     top: 692px;
     left: 10px;
-    width: 360px;
+    width: 368px;
     background-color: #fff;
+    padding:0;
+    text-align: center;
 }
 #popup_mod_dt{
     top: 692px;
-    left: 380px;
-    width: 360px;
+    left: 381px;
+    width: 368px;
     background-color: #fff;
+    padding: 0;
+    text-align: center;
+}
+.popup_container .popup_btn{
+    width: 250px;
+    height: 35px;
+    position: absolute;
+    bottom: -10px;
+    left: 248px;
+    border: none;
+}
+#popup_delete_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+}
+#popup_close_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
 }
 
 

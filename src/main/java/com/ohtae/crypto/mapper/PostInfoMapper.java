@@ -18,10 +18,11 @@ public interface PostInfoMapper {
     // public void insertPostHis(PostHistoryVO data);
     // public void insertPostReplyHis(PostReplyHistoryVO data);
 
-    // public void updatePostStatus(Integer seq, Integer status);
+    public void updatePostToPublicStatus(Integer seq);
+    public void updatePostToPrivateStatus(Integer seq);
 
 
-    // public void deletePostInfo(Integer seq);
+    public void deletePostInfo(Integer seq);
     // public void deletePostReplyInfo(Integer seq);
 
 }

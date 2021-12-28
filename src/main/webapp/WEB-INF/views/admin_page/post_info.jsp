@@ -62,7 +62,7 @@
                             </tr>
                         </c:if>
                         <c:forEach items="${data.list}" var="li">
-                            <tr id="${li.pi_seq}s" data-seq="${li.pi_seq}s">
+                            <tr id="${li.pi_status==1?li.pi_seq+p:li.pi_seq+n}" data-seq="${li.pi_status==1?li.pi_seq+p:li.pi_seq+n}">
                                 <td>${li.pi_seq}<input class="check_box" type="checkbox"></td>
                                 <td>${li.mi_name}</td>
                                 <td>${li.pi_title}</td>
@@ -90,17 +90,18 @@
     </div>
     <div class="popup_container" style="display: none;">
         <div class="popup_wrap">
-            <div id="popup_number">번호:</div>
-            <div id="popup_author">작성자:</div>
-            <div id="popup_title">제목: ssssss</div>
-            <div id="content_wrap">
-                <div id="popup_content">내용</div>ddd
+            <div id="popup_number">:</div>
+            <div id="popup_author">:</div>
+            <div id="popup_title"></div>
+            <div id="content_wrap"></div>
+            <div id="popup_cat"></div>
+            <div id="popup_status"></div>
+            <div id="popup_reg_dt"></div>
+            <div id="popup_mod_dt"></div>
+            <div class="popup_btn">
+                <button id="popup_delete_btn">삭제</button>
+                <button id="popup_close_btn">취소</button>
             </div>
-            <div id="popup_cat">News/ Stock</div>
-            <div id="popup_status">조회:30000/추천:2500/상태:공개</div>
-            <div id="popup_reg_dt">등록일:</div>
-            <div id="popup_mod_dt">수정일:</div>
-
         </div>
     </div>
 </body>
