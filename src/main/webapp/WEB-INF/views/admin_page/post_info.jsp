@@ -62,7 +62,12 @@
                             </tr>
                         </c:if>
                         <c:forEach items="${data.list}" var="li">
-                            <tr id="${li.pi_status==1?li.pi_seq+p:li.pi_seq+n}" data-seq="${li.pi_status==1?li.pi_seq+p:li.pi_seq+n}">
+                            <c:if test="${li.pi_status==1}">
+                                <tr id="${li.pi_seq}p" data-seq="${li.pi_seq}p">
+                            </c:if>
+                            <c:if test="${li.pi_status==2}">
+                                <tr id="${li.pi_seq}n" data-seq="${li.pi_seq}n">
+                            </c:if>
                                 <td>${li.pi_seq}<input class="check_box" type="checkbox"></td>
                                 <td>${li.mi_name}</td>
                                 <td>${li.pi_title}</td>

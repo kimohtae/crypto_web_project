@@ -22,14 +22,71 @@ $(function(){
             $("#"+check).removeClass("active")
             selected.delete(check)
         }
-        console.log(selected)
+    })
+
+    $("#initial_btn").click(function(){
+        selected = new Set();
+        $(".post_list_table tbody tr input").prop("checked",false)
+        $(".post_list_table tbody tr").removeClass("active")
     })
     
+    $("#status_btn").click(function(){
+        if(selected.size==0){
+            alert("선택된 항목이 없습니다.")
+            return;
+        }else{
+            if(!confirm("정말 변경하시겠습니까?"))return;
+        }
+        for (var seq of selected){
+            if(seq.slice(-1)=="p"){
+                seq = seq.slice(0,-1);
+                $.ajax({
+                    url:"/admin/post/update/toPrivate?seq="+seq,
+                    type:"patch",
+                    success:function(r){
+                        location.reload()
+                    }
+                })
+            }else{
+                seq = seq.slice(0,-1);
+                $.ajax({
+                    url:"/admin/post/update/toPublic?seq="+seq,
+                    type:"patch",
+                    success:function(r){
+                        location.reload()
+                    }
+                })
+            }
+        }
+    })
+    
+    $("#delete_btn").click(function(){
+        if(selected.size==0){
+            alert("선택된 항목이 없습니다.")
+            return;
+        }else{
+            if(!confirm("정말 삭제하시겠습니까?"))return;
+        }
+        for (var seq of selected){
+            seq = seq.slice(0,-1);
+            $.ajax({
+                url:"/admin/post/delete?seq="+seq,
+                type:"delete",
+                success:function(r){
+                    if(r.status){
+                        location.reload();
+                    }
+                }
+            })
+        }
+    })
+
+
     $(".post_list_table tbody tr").dblclick(function(){
         let check = $(this).attr("data-seq")
         check = check.slice(0,-1);
         selected = new Set();
-        $(".post_list_table tbody tr").prop("checked",false)
+        $(".post_list_table tbody tr input").prop("checked",false)
         $(".post_list_table tbody tr").removeClass("active")
         $(".popup_container").css("display","block")
         
@@ -56,7 +113,6 @@ $(function(){
                 url:"/admin/post/delete?seq="+check,
                 type:"delete",
                 success:function(r){
-                    alert(r.message);
                     if(r.status){
                         location.reload();
                     }
