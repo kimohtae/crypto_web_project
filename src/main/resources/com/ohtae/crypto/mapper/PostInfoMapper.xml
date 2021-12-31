@@ -19,13 +19,15 @@
         from post_info a join member_info b on a.pi_mi_seq = b.mi_seq)c 
             join table_info d on c.pi_ti_seq = d.ti_seq)e
             join investment_type_info f on e.pi_iti_seq = f.iti_seq 
-        where #{type} like #{keyword}
-        order by pi_seq desc
+        where ${type} like #{keyword}
+        order by ${order} ${dir}
         limit 20 offset #{offset} 
     </select>
     <select id="selectPostCounts" resultType="java.lang.Integer">
-        select count(*) from post_info
-        where #{type} like #{keyword}
+        select 
+        	count(*)
+        from post_info a join member_info b on a.pi_mi_seq = b.mi_seq
+        where ${type} like #{keyword}
     </select>
     <select id="selectPostInfo" resultType="com.ohtae.crypto.data.PostInfoVO">
         select 

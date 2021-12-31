@@ -13,20 +13,28 @@ import org.springframework.stereotype.Service;
 public class PostService {
     @Autowired PostInfoMapper Pmapper;
 
-    public Map<String,Object> selectPostList(Integer offset, String keyword, String type){
+    public Map<String,Object> selectPostList(Integer offset, String keyword, String type, String order, String dir){
         Map<String, Object> map = new LinkedHashMap<String, Object>();
         if(offset==null) offset=0;
+        map.put("keyword", keyword);
         if(keyword==null){
             keyword = "%%";
         }else{
             keyword = "%" + keyword +"%";
         }
         if(type==null) type="pi_title";
+        if(order==null) order="pi_seq";
+        if(dir==null) dir="desc";
 
-        map.put("list", Pmapper.selectPostList(offset, keyword, type));
+        map.put("list", Pmapper.selectPostList(offset, keyword, type, order, dir));
         Integer cnt = Pmapper.selectPostCounts(keyword, type);
         Integer page = cnt/20 + (cnt%20>0?1:0);
         map.put("page", page);
+        map.put("cnt", cnt);
+        map.put("offset", offset);
+        map.put("type", type);
+        map.put("order", order);
+        map.put("dir", dir);
 
         return map;
     }

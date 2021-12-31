@@ -119,14 +119,68 @@ $(function(){
                 }
             })
         })
-
-       
     })
+
+    $(".search_post_btn").click(function(){
+        let keyword = $(".search_post_box").val();
+        let type = $("#keyword_type").val();
+        location.href="/admin/post?keyword="+keyword+"&type="+type
+    })
+
+    $("#seq_arrow").click(function(){
+        let keyword = $("#sending").attr("keyword");
+        let type = $("#sending").attr("type");
+        let order = $("#sending").attr("order");
+        let dir = $("#sending").attr("dir");
+        
+        if(dir=="asc"){
+            dir="desc";
+        }else{
+            dir="asc";
+        }
+        location.href="/admin/post?keyword="+keyword+"&type="+type+"&order="+order+"&dir="+dir
+    })
+    $("#status_arrow").click(function(){
+        let keyword = $("#sending").attr("keyword");
+        let type = $("#sending").attr("type");
+        let order = "pi_like";
+        let dir = "desc";
+        location.href="/admin/post?keyword="+keyword+"&type="+type+"&order="+order+"&dir="+dir
+    })
+    $("#page_left_move").click(function(){
+        let keyword = $("#sending").attr("keyword");
+        let offset = $("#sending").attr("offset");
+        let page = $("#sending").attr("page");
+        let cnt = $("#sending").attr("cnt");
+        let type = $("#sending").attr("type");
+        let order = $("#sending").attr("order");
+        let dir = $("#sending").attr("dir");
+        offset -= 20;
+        if(offset<0) offset = 0;
+        location.href="/admin/post?offset="+offset+"&keyword="+keyword+"&type="+type+"&order="+order+"&dir="+dir
+    })
+    $("#page_right_move").click(function(){
+        let keyword = $("#sending").attr("keyword");
+        let offset = $("#sending").attr("offset");
+        let page = $("#sending").attr("page");
+        let cnt = $("#sending").attr("cnt");
+        let type = $("#sending").attr("type");
+        let order = $("#sending").attr("order");
+        let dir = $("#sending").attr("dir");
+        offset = offset*1 + 20;
+        if(offset>cnt) offset = (page-1)*20;
+        location.href="/admin/post?offset="+offset+"&keyword="+keyword+"&type="+type+"&order="+order+"&dir="+dir
+    })
+
 
    $("#popup_close_btn").click(function(){
     $(".popup_container").css("display","none")
    })
-
+   $(".search_post_wrap").keydown(function(e){
+       if(e.keyCode==13){
+           $(".search_post_btn").trigger("click");
+       }
+   })
 
  
 })

@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface PostInfoMapper {
-    public List<PostInfoVO> selectPostList(Integer offset, String keyword, String type);
+    public List<PostInfoVO> selectPostList(Integer offset, String keyword, String type, String order, String dir);
     public Integer selectPostCounts(String keyword, String type);
     public PostInfoVO selectPostInfo(Integer seq);
     // public Integer selectRecentSeq();

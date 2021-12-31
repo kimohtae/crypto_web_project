@@ -111,6 +111,18 @@
 .post_list_table th:first-child{
     width: 50px;
 }
+#seq_arrow{
+    color: rgba(38, 0, 255, 0.659);
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 4px;
+}
+#status_arrow{
+    color: rgba(38, 0, 255, 0.659);
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 4px;
+}
 
 
 
@@ -316,7 +328,9 @@
     cursor: pointer;
 }
 
-
+#sending{
+    display: none;
+}
 
 
 

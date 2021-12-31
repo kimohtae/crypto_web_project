@@ -33,9 +33,11 @@ public class AdminController {
         Model model,
         @RequestParam @Nullable Integer offset,
         @RequestParam @Nullable String keyword,
-        @RequestParam @Nullable String type
+        @RequestParam @Nullable String type,
+        @RequestParam @Nullable String order,
+        @RequestParam @Nullable String dir
         ){
-        model.addAttribute("data", PService.selectPostList(offset, keyword, type));
+        model.addAttribute("data", PService.selectPostList(offset, keyword, type, order, dir));
         
         return "/admin_page/post_info";
     }

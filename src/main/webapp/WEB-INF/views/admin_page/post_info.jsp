@@ -16,7 +16,6 @@
 
 </head>
 <body>
-    
     <div class="main_container">
         <div class="main_upper_wrap">
             <a href="/admin/member" id="member">Member</a>
@@ -45,12 +44,12 @@
                 <table class="post_list_table">
                     <thead>
                         <tr>
-                            <th>번호</th>
+                            <th>번호<i id="seq_arrow" class="fas fa-arrows-alt-v"></i></th>
                             <th>작성자</th>
                             <th>제목</th>
                             <th>내용</th>
                             <th>종류/종목</th>
-                            <th>조회/추천/상태</th>
+                            <th>상태/조회/추천<i id="status_arrow" class="fas fa-arrow-up"></i></th>
                             <th>등록일</th>
                             <th>수정일</th>
                         </tr>
@@ -58,7 +57,7 @@
                     <tbody>
                         <c:if test="${data.cnt==0}">
                             <tr>
-                                <td id="nodata" colspan="8">회원 정보가 없습니다.</td>
+                                <td id="nodata" colspan="8">게시물 정보가 없습니다.</td>
                             </tr>
                         </c:if>
                         <c:forEach items="${data.list}" var="li">
@@ -73,9 +72,10 @@
                                 <td>${li.pi_title}</td>
                                 <td style="width: 40px; text-overflow: ellipsis;">${li.pi_contents}</td>
                                 <td>${li.ti_table}/${li.iti_type}</td>
-                                <td>${li.pi_views}/${li.pi_like}/
+                                <td>
                                     <c:if test="${li.pi_status==1}">공개</c:if>
                                     <c:if test="${li.pi_status==2}">비공개</c:if>
+                                    /${li.pi_views}/${li.pi_like}
                                 </td>
                                 <td>${li.pi_reg_dt}</td>
                                 <td>${li.pi_mod_dt}</td>
@@ -86,13 +86,14 @@
                 <div class="pager_wrap">
                     <span id="page_left_move"><</span>
                     <c:forEach begin="1" end="${data.page}" var="i">
-                        <a id="${i}" href="/admin/member?offset=${(i-1)*20}&newOrder=${data.order}&adesc=${data.adesc}">${i}</a>
+                        <a id="${i}" href="/admin/post?offset=${(i-1)*20}&keyword=${data.keyword}&type=${data.type}&order=${data.order}&dir=${data.dir}">${i}</a>
                     </c:forEach>
                     <span id="page_right_move">></span>
                 </div>
             </div>
         </div>
     </div>
+    <p id="sending" keyword="${data.keyword}" type=${data.type} order=${data.order} dir=${data.dir} cnt=${data.cnt} offset=${data.offset} page=${data.page}></p>
     <div class="popup_container" style="display: none;">
         <div class="popup_wrap">
             <div id="popup_number">:</div>
