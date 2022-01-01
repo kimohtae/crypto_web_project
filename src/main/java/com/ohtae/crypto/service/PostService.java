@@ -3,6 +3,7 @@ package com.ohtae.crypto.service;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.ohtae.crypto.data.PostHistoryVO;
 import com.ohtae.crypto.data.PostInfoVO;
 import com.ohtae.crypto.mapper.PostInfoMapper;
 
@@ -44,10 +45,22 @@ public class PostService {
     
 
     public void updatePostToPrivateStatus(Integer seq){
-            Pmapper.updatePostToPrivateStatus(seq);
+        PostHistoryVO his = new PostHistoryVO();
+        his.setPih_pi_seq(seq);
+        his.setPih_type("Update");
+        his.setPih_content("Private");
+        Pmapper.insertPostHis(his);
+        
+        Pmapper.updatePostToPrivateStatus(seq);
     }
     public void updatePostToPublicStatus(Integer seq){
-            Pmapper.updatePostToPublicStatus(seq);
+        PostHistoryVO his = new PostHistoryVO();
+        his.setPih_pi_seq(seq);
+        his.setPih_type("Update");
+        his.setPih_content("Public");
+        Pmapper.insertPostHis(his);
+        
+        Pmapper.updatePostToPublicStatus(seq);
     }
 
 
@@ -56,6 +69,11 @@ public class PostService {
         Pmapper.deletePostInfo(seq);
         map.put("status", true);
         map.put("message", "삭제가 완료 되었습니다.");
+
+        PostHistoryVO his = new PostHistoryVO();
+        his.setPih_pi_seq(seq);
+        his.setPih_type("Delete");
+        Pmapper.insertPostHis(his);
 
         return map;
     }

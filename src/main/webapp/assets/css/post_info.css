@@ -227,7 +227,7 @@
     background-color: #fff;
     position: absolute;
     top: calc(50% - 400px);
-    left: calc(50% - 400px);
+    left: calc(50% - 700px);
     border-radius: 20px;
     
 }
@@ -257,6 +257,7 @@
     top: 10px;
     left: 460px;
     width: 290px;
+    height: 22px;
     text-align: center;
     padding-left: 0;
     padding-top: 6px;
@@ -271,9 +272,11 @@
     top: 45px;
     left: 575px;
     width: 175px;
+    height: 22px;
     text-align: center;
     padding-left: 0;
-    font-size: 20px;
+    padding-top: 6px;
+    font-size: 14px;
 }
 
 
@@ -327,6 +330,92 @@
     right: 20px;
     cursor: pointer;
 }
+
+
+.reply_popup_wrap{
+    position: fixed;
+    width: 600px;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 400px);
+    left: calc(50% + 101px);
+    border-radius: 20px;
+}
+.reply_list_box{
+    width: 500px;
+    height: 710px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.456);
+    padding: 8px;
+    position: relative;
+    left: 40px;
+    top: 30px;
+    overflow: auto;
+}
+.reply_list{
+    margin: 0 10px;
+    padding: 5px;
+    height: auto;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.456);
+    position: relative;
+}
+.reply_id{
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 280px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.reply_content{
+    width: 440px;
+    height: auto;
+    left: 20px;
+    top: 30px;
+    font-size: 14px;
+    font-weight: 200;
+    word-break: break-all;
+}
+.reply_like{
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    left: 305px;
+    top: 7px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.reply_reg_dt{
+    width: 160px;
+    height: 20px;
+    margin: 5px;
+    margin-left: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+}
+.reply_del_btn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    left: 440px;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 0, 0, 0.598);
+}
+
+
+
+
+
+
+
+
+
+
 
 #sending{
     display: none;

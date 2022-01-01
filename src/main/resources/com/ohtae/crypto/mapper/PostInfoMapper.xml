@@ -52,6 +52,14 @@
 
 
 
+    <insert id="insertPostHis">
+        insert into post_info_history(pih_pi_seq,pih_type,pih_content) values
+         (#{pih_pi_seq},#{pih_type},#{pih_content})
+    </insert>
+
+
+
+
     <update id="updatePostToPublicStatus">
         update post_info set pi_status = 1 where pi_seq = #{seq}
     </update>

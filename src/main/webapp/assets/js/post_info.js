@@ -89,6 +89,7 @@ $(function(){
         $(".post_list_table tbody tr input").prop("checked",false)
         $(".post_list_table tbody tr").removeClass("active")
         $(".popup_container").css("display","block")
+        $(".reply_popup_wrap").css("display","block")
         
         $.ajax({
             url:"/admin/post/select?seq=" + check,
@@ -175,7 +176,9 @@ $(function(){
 
    $("#popup_close_btn").click(function(){
     $(".popup_container").css("display","none")
+    $(".reply_popup_wrap").css("display","none")
    })
+
    $(".search_post_wrap").keydown(function(e){
        if(e.keyCode==13){
            $(".search_post_btn").trigger("click");
