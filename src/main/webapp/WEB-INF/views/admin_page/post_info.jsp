@@ -111,55 +111,6 @@
         </div>
         <div class="reply_popup_wrap" style="display: none;">
             <div class="reply_list_box">
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와ㅣㅓ뱌ㅐㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
-                <div class="reply_list">
-                    <p class="reply_id">dhxo7707</p>
-                    <p class="reply_content">와 이내용 완전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게전 어러ㅑㅇㄴㅁㄹ ㅣㅇㄴ먀랩다ㅣㅓ뱌ㅐ ㄹㅇ만렁ㅁ럴 ㅂ더ㅑㅐㅇ넓 어냐래ㅓㅏㄷㅂ 러야ㅐㅁ러ㅣㅏ벋ㄹ ㅐㅇ너라머랩 ㅓㅑ너 ㅔ라어 벋게 ㅂ</p>
-                    <p class="reply_like">추천수</p>
-                    <p class="reply_reg_dt">등록일</p>
-                    <button class="reply_del_btn"><i class="far fa-trash-alt"></i></button>
-                </div>
             </div>
         </div>
     </div>

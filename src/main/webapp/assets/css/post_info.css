@@ -362,7 +362,7 @@
 }
 .reply_id{
     margin-top: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     width: 280px;
     height: 20px;
     font-size: 16px;
@@ -379,9 +379,9 @@
 }
 .reply_like{
     position: absolute;
-    width: 140px;
+    width: auto;
     height: 20px;
-    left: 305px;
+    right: 35px;
     top: 7px;
     font-size: 14px;
     font-weight: 300;
@@ -389,7 +389,7 @@
 .reply_reg_dt{
     width: 160px;
     height: 20px;
-    margin: 5px;
+    margin-top: 15px;
     margin-left: 0;
     font-size: 12px;
     font-weight: 100;
@@ -402,6 +402,7 @@
     font-size: 15px;
     left: 440px;
     top: 0;
+    cursor: pointer;
     border: none;
     background-color: transparent;
     color: rgba(255, 0, 0, 0.598);

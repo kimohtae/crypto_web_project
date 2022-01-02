@@ -1,10 +1,14 @@
 package com.ohtae.crypto.service;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.ohtae.crypto.data.PostHistoryVO;
 import com.ohtae.crypto.data.PostInfoVO;
+import com.ohtae.crypto.data.PostReplyInfoVO;
 import com.ohtae.crypto.mapper.PostInfoMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +46,23 @@ public class PostService {
     public PostInfoVO selectPostInfo(Integer seq){
         return Pmapper.selectPostInfo(seq);
     }
-    
+    public List<PostReplyInfoVO> selectPostReplyInfo(Integer seq){
+        List<PostReplyInfoVO> data = Pmapper.selectPostReplyInfo(seq);
+        for(int i=0; i<data.size(); i++){
+            SimpleDateFormat dateFormatted = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+            DecimalFormat likeFormatted = new DecimalFormat("###,###");
+            
+            String D = dateFormatted.format(data.get(i).getPri_reg_dt());
+            String L = likeFormatted.format(data.get(i).getPri_like());
+
+            data.get(i).setPri_format_dt(D);
+            data.get(i).setPri_format_like(L);
+
+            PostReplyInfoVO form = data.get(i);
+            data.set(i, form);
+        }
+        return data;
+    }
 
     public void updatePostToPrivateStatus(Integer seq){
         PostHistoryVO his = new PostHistoryVO();
@@ -77,4 +97,13 @@ public class PostService {
 
         return map;
     }
+    public Map<String, Object> deletePostReplyInfo(Integer seq){
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
+        Pmapper.deletePostReplyInfo(seq);
+        map.put("status", true);
+        map.put("message", "삭제가 완료 되었습니다.");
+        return map;
+    }
+
+    
 }

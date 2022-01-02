@@ -105,7 +105,38 @@ $(function(){
                 $("#popup_status").html("조회:"+r.pi_views+" 추천:"+r.pi_like+" 상태:"+status);
                 $("#popup_reg_dt").html("등록일: "+r.pi_reg_dt);
                 $("#popup_mod_dt").html("수정일: "+r.pi_mod_dt);
-                console.log(r)
+            }
+        })
+        $.ajax({
+            url:"/admin/post/reply/select?seq="+check,
+            type:"get",
+            success:function(r){
+                for(let i=0; i<r.length; i++){
+                    let data = 
+                    '<div class="reply_list" id="'+ r[i].pri_seq +'r" >' + 
+                        '<p class="reply_id">'+ r[i].mi_name +'</p>'+
+                        '<p class="reply_content">'+ r[i].pri_contents +'</p>'+
+                        '<p class="reply_like">추천수: ' +r[i].pri_format_like +'</p>'+
+                        '<p class="reply_reg_dt">' +r[i].pri_format_dt+ '</p>'+
+                        '<button class="reply_del_btn" reply-seq="'+ r[i].pri_seq +'r"><i class="far fa-trash-alt"></i></button>'+
+                    '</div>'
+                    $(".reply_list_box").append(data);
+                }
+                $(".reply_list_box .reply_del_btn").click(function(){
+                    if(confirm("정말 삭제하시겠습니까?")==false) return;
+                    let reply_sel = $(this).attr("reply-seq");
+                    reply_sel = reply_sel.slice(0,-1);
+                    $.ajax({
+                        url:"/admin/post/reply/delete?seq="+reply_sel,
+                        type:"delete",
+                        success:function(r){
+                            if(r.status){
+                                reply_sel = reply_sel + "r";
+                                $("#"+reply_sel).remove()
+                            }
+                        }
+                    })
+                })
             }
         })
         $("#popup_delete_btn").click(function(){
@@ -120,7 +151,9 @@ $(function(){
                 }
             })
         })
+        
     })
+
 
     $(".search_post_btn").click(function(){
         let keyword = $(".search_post_box").val();

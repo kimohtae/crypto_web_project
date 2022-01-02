@@ -49,6 +49,11 @@
             join investment_type_info f on e.pi_iti_seq = f.iti_seq 
         where pi_seq = #{seq}
     </select>
+    <select id="selectPostReplyInfo" resultType="com.ohtae.crypto.data.PostReplyInfoVO">
+        select pri_seq,pri_contents,pri_like,pri_reg_dt,pri_mi_seq,mi_name 
+            from post_reply_info a join member_info b on a.pri_mi_seq = b.mi_seq
+        where pri_pi_seq = #{seq}
+    </select> 
 
 
 
@@ -72,5 +77,8 @@
 
     <delete id="deletePostInfo">
         delete from post_info where pi_seq = #{seq}
+    </delete>
+    <delete id="deletePostReplyInfo">
+        delete from post_reply_info where pri_seq = #{seq}
     </delete>
 </mapper>
