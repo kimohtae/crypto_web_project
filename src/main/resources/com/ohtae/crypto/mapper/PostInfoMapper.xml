@@ -5,17 +5,17 @@
         select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name,ti_table,iti_type
+        	,mi_id,ti_table,iti_type
         from
         (select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name,ti_table
+        	,mi_id,ti_table
         from
         (select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name
+        	,mi_id
         from post_info a join member_info b on a.pi_mi_seq = b.mi_seq)c 
             join table_info d on c.pi_ti_seq = d.ti_seq)e
             join investment_type_info f on e.pi_iti_seq = f.iti_seq 
@@ -33,24 +33,24 @@
         select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name,ti_table,iti_type
+        	,mi_id,ti_table,iti_type
         from
         (select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name,ti_table
+        	,mi_id,ti_table
         from
         (select 
         	pi_seq,pi_mi_seq,pi_ti_seq,pi_title,pi_contents,pi_views,
         	pi_like,pi_reg_dt,pi_mod_dt,pi_iti_seq,pi_status
-        	,mi_name
+        	,mi_id
         from post_info a join member_info b on a.pi_mi_seq = b.mi_seq)c 
             join table_info d on c.pi_ti_seq = d.ti_seq)e
             join investment_type_info f on e.pi_iti_seq = f.iti_seq 
         where pi_seq = #{seq}
     </select>
     <select id="selectPostReplyInfo" resultType="com.ohtae.crypto.data.PostReplyInfoVO">
-        select pri_seq,pri_contents,pri_like,pri_reg_dt,pri_mi_seq,mi_name 
+        select pri_seq,pri_contents,pri_like,pri_reg_dt,pri_mi_seq,mi_id 
             from post_reply_info a join member_info b on a.pri_mi_seq = b.mi_seq
         where pri_pi_seq = #{seq}
     </select> 

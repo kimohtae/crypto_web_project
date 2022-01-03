@@ -20,7 +20,7 @@ public class PostInfoVO {
 
     
     
-    private String mi_name;
+    private String mi_id;
     private String ti_table;
     private String iti_type;
 }

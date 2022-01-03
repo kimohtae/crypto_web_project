@@ -96,7 +96,7 @@ $(function(){
             type:"get",
             success:function(r){
                 $("#popup_number").html("번호: "+r.pi_seq);
-                $("#popup_author").html("작성자: "+r.mi_name);
+                $("#popup_author").html("작성자: "+r.mi_id);
                 $("#popup_title").html("제목: "+r.pi_title);
                 $("#content_wrap").html(r.pi_contents);
                 $("#popup_content").html("내용")
@@ -114,7 +114,7 @@ $(function(){
                 for(let i=0; i<r.length; i++){
                     let data = 
                     '<div class="reply_list" id="'+ r[i].pri_seq +'r" >' + 
-                        '<p class="reply_id">'+ r[i].mi_name +'</p>'+
+                        '<p class="reply_id">'+ r[i].mi_id +'</p>'+
                         '<p class="reply_content">'+ r[i].pri_contents +'</p>'+
                         '<p class="reply_like">추천수: ' +r[i].pri_format_like +'</p>'+
                         '<p class="reply_reg_dt">' +r[i].pri_format_dt+ '</p>'+
