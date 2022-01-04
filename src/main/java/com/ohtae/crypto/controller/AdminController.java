@@ -1,5 +1,6 @@
 package com.ohtae.crypto.controller;
 
+import com.ohtae.crypto.service.ContactService;
 import com.ohtae.crypto.service.MemberService;
 import com.ohtae.crypto.service.PostService;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
     @Autowired MemberService Mservice;
     @Autowired PostService PService;
+    @Autowired ContactService CService;
 
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
@@ -40,5 +42,15 @@ public class AdminController {
         model.addAttribute("data", PService.selectPostList(offset, keyword, type, order, dir));
         
         return "/admin_page/post_info";
+    }
+    
+    @GetMapping("/admin/contact")
+    public String getContactInfoPage(
+        Model model,
+        @RequestParam @Nullable Integer offset
+        ){
+        model.addAttribute("data", CService.selectContactList(offset));
+        
+        return "/admin_page/contact_info";
     }
 }

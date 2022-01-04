@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/post_info.css">
+    <link rel="stylesheet" href="/assets/css/contact_info.css">
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
-    <script src="/assets/js/post_info.js"></script>
+    <script src="/assets/js/contact_info.js"></script>
 
         
 
@@ -69,7 +69,7 @@
                                 <tr id="${li.pi_seq}n" data-seq="${li.pi_seq}n">
                             </c:if>
                                 <td>${li.pi_seq}<input class="check_box" type="checkbox"></td>
-                                <td>${li.mi_id}</td>
+                                <td>${li.mi_name}</td>
                                 <td>${li.pi_title}</td>
                                 <td style="width: 40px; text-overflow: ellipsis;">${li.pi_contents}</td>
                                 <td>${li.ti_table}/${li.iti_type}</td>
