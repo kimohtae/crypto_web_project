@@ -167,17 +167,17 @@
 #popup_author{
     top: 10px;
     left: 155px;
-    width: 290px;
+    width: 428px;
 }
 #popup_status{
     top: 10px;
-    left: 460px;
-    width: 290px;
-    height: 22px;
+    left: 600px;
+    width: 150px;
+    height: 24px;
     text-align: center;
     padding-left: 0;
-    padding-top: 6px;
-    font-size: 16px;
+    padding-top: 4px;
+    font-size: 20px;
 }
 #popup_title{
     top: 45px;
@@ -260,7 +260,7 @@
 }
 .reply_list_box{
     width: 500px;
-    height: 710px;
+    height: 580px;
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.456);
     padding: 8px;
@@ -314,8 +314,30 @@
     background-color: transparent;
     color: rgba(255, 0, 0, 0.598);
 }
-
-
+.admin_reply_list_box{
+    margin: 30px 40px;
+    padding-top: 5px;
+    position: relative;
+}
+#admin_reply_text{
+    width: 400px;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+#admin_reply_btn{
+    width: 100px;
+    height: 102px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+}
 
 
 

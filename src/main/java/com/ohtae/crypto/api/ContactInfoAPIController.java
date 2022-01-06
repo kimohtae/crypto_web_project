@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ohtae.crypto.data.ContactInfoVO;
-import com.ohtae.crypto.data.PostReplyInfoVO;
+import com.ohtae.crypto.data.ContactReplyInfoVO;
 import com.ohtae.crypto.service.ContactService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class ContactInfoAPIController {
         return CService.selectContactInfo(seq);
     }
     @GetMapping("/admin/contact/reply/select")
-    public List<PostReplyInfoVO> selectContactReplyInfo(@RequestParam Integer seq){
+    public List<ContactReplyInfoVO> selectContactReplyInfo(@RequestParam Integer seq){
         return CService.selectContactReplyInfo(seq);
     }
     @PatchMapping("/admin/contact/update")

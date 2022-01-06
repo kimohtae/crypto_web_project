@@ -7,11 +7,12 @@ import java.util.Map;
 
 import com.ohtae.crypto.data.ContactHistoryVO;
 import com.ohtae.crypto.data.ContactInfoVO;
-import com.ohtae.crypto.data.PostReplyInfoVO;
+import com.ohtae.crypto.data.ContactReplyInfoVO;
 import com.ohtae.crypto.mapper.ContactInfoMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class ContactService {
@@ -31,15 +32,15 @@ public class ContactService {
     public ContactInfoVO selectContactInfo(Integer seq){
         return Cmapper.selectContactInfo(seq);
     }
-    public List<PostReplyInfoVO> selectContactReplyInfo(Integer seq){
-        List<PostReplyInfoVO> data = Cmapper.selectContactReplyInfo(seq);
+    public List<ContactReplyInfoVO> selectContactReplyInfo(Integer seq){
+        List<ContactReplyInfoVO> data = Cmapper.selectContactReplyInfo(seq);
         for(int i=0; i<data.size(); i++){
             SimpleDateFormat dateFormatted = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");            
-            String D = dateFormatted.format(data.get(i).getPri_reg_dt());
+            String D = dateFormatted.format(data.get(i).getCri_reg_dt());
 
-            data.get(i).setPri_format_dt(D);
+            data.get(i).setCri_format_dt(D);
 
-            PostReplyInfoVO form = data.get(i);
+            ContactReplyInfoVO form = data.get(i);
             data.set(i, form);
         }
         return data;

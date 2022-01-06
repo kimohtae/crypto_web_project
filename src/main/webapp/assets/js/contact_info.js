@@ -30,6 +30,7 @@ $(function(){
 
     $(".contact_list_table tbody tr").dblclick(function(){
         let check = $(this).attr("data-seq")
+        $(".reply_list_box div").remove();
         $(".popup_container").css("display","block")
         $(".reply_popup_wrap").css("display","block")
         $.ajax({
@@ -52,11 +53,11 @@ $(function(){
             success:function(r){
                 for(let i=0; i<r.length; i++){
                     let data = 
-                    '<div class="reply_list" id="'+ r[i].pri_seq +'r" >' + 
+                    '<div class="reply_list" id="'+ r[i].cri_seq +'r" >' + 
                         '<p class="reply_id">'+ r[i].mi_id +'</p>'+
-                        '<p class="reply_content">'+ r[i].pri_contents +'</p>'+
-                        '<p class="reply_reg_dt">' +r[i].pri_format_dt+ '</p>'+
-                        '<button class="reply_del_btn" reply-seq="'+ r[i].pri_seq +'r"><i class="far fa-trash-alt"></i></button>'+
+                        '<p class="reply_content">'+ r[i].cri_contents +'</p>'+
+                        '<p class="reply_reg_dt">' +r[i].cri_format_dt+ '</p>'+
+                        '<button class="reply_del_btn" reply-seq="'+ r[i].cri_seq +'r"><i class="far fa-trash-alt"></i></button>'+
                     '</div>'
                     $(".reply_list_box").append(data);
                 }
@@ -96,7 +97,6 @@ $(function(){
    $("#popup_close_btn").click(function(){
     $(".popup_container").css("display","none")
     $(".reply_popup_wrap").css("display","none")
-    $(".reply_list_box div").remove();
    })
 
  

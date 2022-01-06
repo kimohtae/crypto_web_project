@@ -87,6 +87,10 @@
         <div class="reply_popup_wrap" style="display: none;">
             <div class="reply_list_box">
             </div>
+            <div class="admin_reply_list_box">
+                <input id="admin_reply_text" type="text">
+                <button id="admin_reply_btn">등록</button>
+            </div>
         </div>
     </div>
 </body>

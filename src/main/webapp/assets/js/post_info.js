@@ -210,6 +210,7 @@ $(function(){
    $("#popup_close_btn").click(function(){
     $(".popup_container").css("display","none")
     $(".reply_popup_wrap").css("display","none")
+    $(".reply_list_box div").remove();
    })
 
    $(".search_post_wrap").keydown(function(e){

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ohtae.crypto.data.ContactHistoryVO;
 import com.ohtae.crypto.data.ContactInfoVO;
-import com.ohtae.crypto.data.PostReplyInfoVO;
+import com.ohtae.crypto.data.ContactReplyInfoVO;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,7 +13,7 @@ public interface ContactInfoMapper {
     public List<ContactInfoVO> selectContactList(Integer offset);
     public Integer selectContactCounts();
     public ContactInfoVO selectContactInfo(Integer seq);
-    public List<PostReplyInfoVO> selectContactReplyInfo(Integer seq);
+    public List<ContactReplyInfoVO> selectContactReplyInfo(Integer seq);
     
     public void insertContactHis(ContactHistoryVO data);
 

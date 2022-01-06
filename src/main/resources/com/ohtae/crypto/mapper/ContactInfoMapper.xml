@@ -19,10 +19,10 @@
         from contact_info a join member_info b on a.ci_mi_seq = b.mi_seq 
         where ci_seq = #{seq}
     </select>
-    <select id="selectContactReplyInfo" resultType="com.ohtae.crypto.data.PostReplyInfoVO">
-        select pri_seq,pri_contents,pri_reg_dt,pri_mi_seq,mi_id 
-            from post_reply_info a join member_info b on a.pri_mi_seq = b.mi_seq
-        where pri_pi_seq = #{seq}
+    <select id="selectContactReplyInfo" resultType="com.ohtae.crypto.data.ContactReplyInfoVO">
+        select cri_seq,cri_contents,cri_reg_dt,cri_mi_seq,mi_id 
+            from contact_reply_info a join member_info b on a.cri_mi_seq = b.mi_seq
+        where cri_ci_seq = #{seq}
     </select> 
 
 
@@ -52,6 +52,6 @@
         delete from contact_info where ci_seq = #{seq}
     </delete>
     <delete id="deleteContactReplyInfo">
-        delete from post_reply_info where pri_seq = #{seq}
+        delete from contact_reply_info where cri_seq = #{seq}
     </delete>
 </mapper>
