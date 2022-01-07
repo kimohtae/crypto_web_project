@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.ohtae.crypto.data.ContactHistoryVO;
 import com.ohtae.crypto.data.ContactInfoVO;
+import com.ohtae.crypto.data.ContactReplyHistoryVO;
 import com.ohtae.crypto.data.ContactReplyInfoVO;
 import com.ohtae.crypto.mapper.ContactInfoMapper;
 
@@ -25,6 +26,7 @@ public class ContactService {
         map.put("list", Cmapper.selectContactList(offset));
         Integer cnt = Cmapper.selectContactCounts();
         Integer page = cnt/20 + (cnt%20>0?1:0);
+        map.put("offset", offset);
         map.put("page", page);
         map.put("cnt", cnt);
         return map;
@@ -44,6 +46,15 @@ public class ContactService {
             data.set(i, form);
         }
         return data;
+    }
+
+    public void insertContactReplyInfo(ContactReplyInfoVO data){
+        Cmapper.insertContactReplyInfo(data);
+        ContactReplyHistoryVO his = new ContactReplyHistoryVO();
+        his.setCrih_cri_seq(data.getCri_seq());
+        his.setCrih_type("New");
+        String cont = data.getCri_ci_seq()+"|"+data.getCri_mi_seq()+"|"+data.getCri_contents()+"|"+data.getCri_reg_dt();
+        his.setCrih_content(cont);
     }
 
     public void updateContactStatus(Integer seq, Integer status){
@@ -83,6 +94,9 @@ public class ContactService {
         Cmapper.deleteContactReplyInfo(seq);
         map.put("status", true);
         map.put("message", "삭제가 완료 되었습니다.");
+        ContactReplyHistoryVO his = new ContactReplyHistoryVO();
+        his.setCrih_cri_seq(seq);
+        his.setCrih_type("New");
         return map;
     }
 

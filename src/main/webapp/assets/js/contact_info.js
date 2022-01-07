@@ -5,28 +5,6 @@ $(function(){
     $(".contact_list_table").addClass("active")
 
 
-    
-    $("#delete_btn").click(function(){
-        if(selected.size==0){
-            alert("선택된 항목이 없습니다.")
-            return;
-        }else{
-            if(!confirm("정말 삭제하시겠습니까?"))return;
-        }
-        for (var seq of selected){
-            seq = seq.slice(0,-1);
-            $.ajax({
-                url:"/admin/contact/delete?seq="+seq,
-                type:"delete",
-                success:function(r){
-                    if(r.status){
-                        location.reload();
-                    }
-                }
-            })
-        }
-    })
-
 
     $(".contact_list_table tbody tr").dblclick(function(){
         let check = $(this).attr("data-seq")
@@ -78,6 +56,24 @@ $(function(){
                 })
             }
         })
+        $("#admin_reply_btn").click(function(){
+            if(confirm("정말 등록하시겠습니까?")==false) return;
+            let data = {
+                "cri_ci_seq":check,
+                "cri_mi_seq":"13",
+                "cri_contents":$("#admin_reply_text").val()
+            }
+            $.ajax({
+                url:"/admin/contact/reply/insert",
+                type:"post",
+                data:JSON.stringify(data),
+                contentType:"application/json",
+                success:function(){
+                    location.reload()
+                }
+            })
+            
+        })
         $("#popup_delete_btn").click(function(){
             if(confirm("정말 삭제하시겠습니까?")==false) return;
             $.ajax({
@@ -95,9 +91,23 @@ $(function(){
 
 
    $("#popup_close_btn").click(function(){
-    $(".popup_container").css("display","none")
-    $(".reply_popup_wrap").css("display","none")
+        location.reload();
    })
-
+   $("#page_left_move").click(function(){
+    let offset = $("#sending").attr("offset");
+    let page = $("#sending").attr("page");
+    let cnt = $("#sending").attr("cnt");
+    offset -= 20;
+    if(offset<0) offset = 0;
+    location.href="/admin/contact?offset="+offset
+})
+$("#page_right_move").click(function(){
+    let offset = $("#sending").attr("offset");
+    let page = $("#sending").attr("page");
+    let cnt = $("#sending").attr("cnt");
+    offset = offset*1 + 20;
+    if(offset>cnt) offset = (page-1)*20;
+    location.href="/admin/contact?offset="+offset
+})
  
 })

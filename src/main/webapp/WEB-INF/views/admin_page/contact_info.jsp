@@ -70,6 +70,7 @@
             </div>
         </div>
     </div>
+    <div id="sending" offset="${data.offset}" page="${data.page}" cnt="${data.cnt}" style="display:none"></div>
     <div class="popup_container" style="display: none;">
         <div class="popup_wrap">
             <div id="popup_number"></div>

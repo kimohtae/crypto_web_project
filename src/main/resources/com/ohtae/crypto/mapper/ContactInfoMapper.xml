@@ -26,10 +26,17 @@
     </select> 
 
 
-
+    <insert id="insertContactReplyInfo">
+        insert into contact_reply_info(cri_ci_seq,cri_mi_seq,cri_contents) 
+        values (#{cri_ci_seq},#{cri_mi_seq},#{cri_contents}) 
+    </insert>
     <insert id="insertContactHis">
         insert into contact_info_history(cih_ci_seq,cih_type,cih_content) values
          (#{cih_ci_seq},#{cih_type},#{cih_content})
+    </insert>
+    <insert id="insertContactReplyHis">
+        insert into contact_reply_info_history(crih_cri_seq,crih_type,crih_content)
+        values (#{crih_cri_seq},#{crih_type},#{crih_content})
     </insert>
 
 

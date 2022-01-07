@@ -11,4 +11,6 @@ public class ContactReplyHistoryVO {
     private String crih_type;
     private String crih_content;
     private Date crih_reg_dt;
+
+    
 }

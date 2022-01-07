@@ -13,4 +13,5 @@ public class ContactReplyInfoVO {
     private Date cri_reg_dt;
 
     private String cri_format_dt;
+    private String mi_id;
 }
