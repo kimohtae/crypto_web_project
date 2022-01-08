@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohtae.crypto.mapper.NewsPageInfoMapper">
+    <select id="selectNewsList" resultType="com.ohtae.crypto.data.MemberInfoVO">
+        select 
+            npi_seq,npi_title,npi_view,npi_reg_dt,npi_link,
+            npi_author,npi_company,npi_content
+        from news_page_info 
+        where npi_title like #{keyword}
+        order by ${order} 
+        limit 30 offset #{offset}
+    </select>
+    <select id="selectNewsCounts" resultType="java.lang.Integer">
+        select count(*) from news_page_info
+    </select>
+    
+     
+    <insert id="insertNewsInfo">
+        insert into news_page_info
+            (npi_seq,npi_title,npi_view,npi_reg_dt,npi_link,npi_author,npi_company,npi_content)
+        values
+            (#{npi_seq},#{npi_title},#{npi_view},#{npi_reg_dt},#{npi_link},#{npi_author},#{npi_company},#{npi_content})
+    </insert>
+    
+
+    <delete id="deleteNewsInfo">
+        delete from news_page_info where npi_seq = ${seq};
+    </delete>
+</mapper>

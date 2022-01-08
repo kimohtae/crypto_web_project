@@ -27,7 +27,7 @@
         </div>
         <div class="page_container">
             <div class="news_page_wrap">
-                <a href="#">something news</a>
+                <a href="/practice/page">something news</a>
                 <a href="#">something news</a>
                 <a href="#">something news</a>
                 <a href="#">something news</a>
