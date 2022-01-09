@@ -2,6 +2,7 @@ package com.ohtae.crypto.controller;
 
 import com.ohtae.crypto.service.ContactService;
 import com.ohtae.crypto.service.MemberService;
+import com.ohtae.crypto.service.NewsService;
 import com.ohtae.crypto.service.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class AdminController {
     @Autowired MemberService Mservice;
     @Autowired PostService PService;
     @Autowired ContactService CService;
+    @Autowired NewsService NService;
 
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
@@ -52,5 +54,17 @@ public class AdminController {
         model.addAttribute("data", CService.selectContactList(offset));
         
         return "/admin_page/contact_info";
+    }
+
+    
+    @GetMapping("/admin/news")
+    public String selectNewsList(
+        @RequestParam @Nullable Integer offset,
+        @RequestParam @Nullable String order,
+        @RequestParam @Nullable String keyword,
+        Model model
+        ){
+        model.addAttribute("data", NService.selectNewsList(offset, order, keyword));
+        return "/admin_page/news_page_info";
     }
 }

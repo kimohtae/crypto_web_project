@@ -22,6 +22,7 @@
             <a href="/admin/member" id="member">Member</a>
             <a href="/admin/post" id="">Post</a>
             <a href="/admin/contact" id="contact">Contact</a>
+            <a href="/admin/news" id="news">news</a>
             <button><i class="fas fa-ellipsis-h"></i></button>
             
         </div>

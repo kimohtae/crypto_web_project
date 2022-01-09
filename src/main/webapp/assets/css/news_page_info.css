@@ -1,0 +1,365 @@
+/* new_page_info.css */
+
+#contact{
+    color: #000;
+    font-weight: 600;
+}
+
+.main_container{
+    width: 1130px;
+    padding: 15px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.591);
+}
+.main_upper_wrap{
+    width: 1100px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.main_upper_wrap > a{
+    text-decoration: none;
+    display: inline-block;
+    tab-size: 18px;
+    color: #444;
+    font-weight: 400;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+.main_upper_wrap > p:hover{
+    color: #000;
+    cursor: pointer;
+}
+.main_upper_wrap > button{
+    float: right;
+    margin: 0 10px;
+    color: #000;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 0;
+}
+.main_upper_wrap > button:hover{
+    background-color: #999;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page_container{
+    width: 1100px; margin: 0 auto;
+    position: relative;
+    top: 0;
+    height: 1381px;
+}
+
+.contact_page_wrap{
+    width: 1040px; margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    left: 0;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    height: 1321px;
+    box-shadow: 5px 5px 5px 5px gray;
+    opacity: 100%;
+    
+    transition: 1s;
+}
+.contact_page_wrap.active{
+    top: 0;
+    box-shadow: none;
+}
+.contact_list_table{
+    border-collapse: collapse; 
+    border-spacing: 0;		
+    opacity: 0%;
+    width: 100%; 
+    table-layout: fixed;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+.contact_list_table.active{
+    opacity: 100%;
+}
+
+
+.contact_list_table th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    width: 114px;
+    font-weight: 500;
+    text-align: center;
+   
+}
+.contact_list_table td{
+    border-bottom: 1px solid #999;
+    font-size: 14px;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    overflow:hidden;
+    white-space : nowrap;
+    text-overflow: ellipsis;
+}
+.contact_list_table th:first-child{
+    width: 50px;
+}
+
+
+#nodata{
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin: 4px;
+    color: gray;
+}
+
+
+
+.contact_list_table tbody tr:hover{
+    background-color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+
+
+
+.popup_container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(153, 153, 153, 0.408);
+}
+.popup_wrap{
+    width: 800px;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 400px);
+    left: calc(50% - 700px);
+    border-radius: 20px;
+    
+}
+.popup_wrap div{
+    width: 200px;
+    height: 24px;
+    margin: 20px;
+    padding-top: 4px;
+    padding-left: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+}
+#popup_number{
+    top: 10px;
+    left: 10px;
+    width: 130px;
+}
+#popup_author{
+    top: 10px;
+    left: 155px;
+    width: 428px;
+}
+#popup_status{
+    top: 10px;
+    left: 600px;
+    width: 150px;
+    height: 24px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 4px;
+    font-size: 20px;
+}
+#popup_title{
+    top: 45px;
+    left: 10px;
+    width: 730px;
+}
+#popup_cat{
+    top: 45px;
+    left: 575px;
+    width: 175px;
+    height: 22px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 6px;
+    font-size: 14px;
+}
+
+
+#content_wrap{
+    width: 730px;
+    height: 570px;
+    top: 80px;
+    left: 10px;
+    padding: 5px 5px 35px 5px;
+    word-break: break-all;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+#popup_reg_dt{
+    top: 692px;
+    left: 10px;
+    width: 368px;
+    background-color: #fff;
+    padding:0;
+    text-align: center;
+}
+#popup_mod_dt{
+    top: 692px;
+    left: 381px;
+    width: 368px;
+    background-color: #fff;
+    padding: 0;
+    text-align: center;
+}
+.popup_container .popup_btn{
+    width: 250px;
+    height: 35px;
+    position: absolute;
+    bottom: -10px;
+    left: 248px;
+    border: none;
+}
+#popup_delete_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+}
+#popup_close_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+.reply_popup_wrap{
+    position: fixed;
+    width: 600px;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 400px);
+    left: calc(50% + 101px);
+    border-radius: 20px;
+}
+.reply_list_box{
+    width: 500px;
+    height: 580px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.456);
+    padding: 8px;
+    position: relative;
+    left: 40px;
+    top: 30px;
+    overflow: auto;
+}
+.reply_list{
+    margin: 0 10px;
+    padding: 5px;
+    height: auto;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.456);
+    position: relative;
+}
+.reply_id{
+    margin-top: 2px;
+    margin-bottom: 10px;
+    width: 280px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.reply_content{
+    width: 440px;
+    height: auto;
+    left: 20px;
+    top: 30px;
+    font-size: 14px;
+    font-weight: 200;
+    word-break: break-all;
+}
+.reply_reg_dt{
+    width: 160px;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 0;
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+}
+.reply_del_btn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    left: 440px;
+    top: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 0, 0, 0.598);
+}
+.admin_reply_list_box{
+    margin: 30px 40px;
+    padding-top: 5px;
+    position: relative;
+}
+#admin_reply_text{
+    width: 400px;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+#admin_reply_btn{
+    width: 100px;
+    height: 102px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+
+
+.pager_wrap{
+    text-align: center;
+    margin: 20px;
+}
+.pager_wrap span{
+    font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+}
+.pager_wrap a{
+    padding: 4px;
+    text-decoration: none;
+    color: #000;
+}
+.pager_wrap a:hover{
+    text-decoration: underline;
+}
+.pager_wrap a.current{
+    text-decoration: underline;
+    font-weight: 400;
+}
