@@ -1,12 +1,12 @@
 // new_page_info.js
 $(function(){
 
-    $(".contact_page_wrap").addClass("active")
-    $(".contact_list_table").addClass("active")
+    $(".news_page_wrap").addClass("active")
+    $(".news_list_table").addClass("active")
 
 
 
-    $(".contact_list_table tbody tr").dblclick(function(){
+    $(".news_list_table tbody tr").dblclick(function(){
         let check = $(this).attr("data-seq")
         $(".reply_list_box div").remove();
         $(".popup_container").css("display","block")

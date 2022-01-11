@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface NewsPageInfoMapper {
-    public List<NewsPageInfoVO> selectNewsList(Integer offset, String order, String keyworkd);
+    public List<NewsPageInfoVO> selectNewsList(Integer offset, String order, String keyword);
     public Integer selectNewsCounts();
 
     public void insertNewsInfo(NewsPageInfoVO data);

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class NewsPageController {
+public class NewsPageAPIController {
     @Autowired NewsPageInfoMapper MPService;
 
     @PostMapping("/admin/news/insert")

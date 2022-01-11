@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/new_page_info.css">
+    <link rel="stylesheet" href="/assets/css/news_page_info.css">
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
-    <script src="/assets/js/new_page_info.js"></script>
+    <script src="/assets/js/news_page_info.js"></script>
 
         
 
@@ -26,37 +26,36 @@
             
         </div>
         <div class="page_container">
-            <div class="contact_page_wrap">
-                <table class="contact_list_table">
+            <div class="news_page_wrap">
+                <table class="news_list_table">
                     <thead>
                         <tr>
                             <th>번호</th>
                             <th>작성자</th>
+                            <th>회사</th>
                             <th>제목</th>
                             <th>내용</th>
-                            <th>상태</th>
+                            <th>링크</th>
+                            <th>조회수</th>
                             <th>등록일</th>
-                            <th>수정일</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:if test="${data.cnt==0}">
                             <tr>
-                                <td id="nodata" colspan="7">게시물 정보가 없습니다.</td>
+                                <td id="nodata" colspan="8">뉴스 정보가 없습니다.</td>
                             </tr>
                         </c:if>
                         <c:forEach items="${data.list}" var="li">
-                            <tr data-seq="${li.ci_seq}">
-                                <td>${li.ci_seq}</td>
-                                <td>${li.mi_id}</td>
-                                <td>${li.ci_title}</td>
-                                <td style="width: 60px; text-overflow: ellipsis;">${li.ci_contents}</td>
-                                <td>
-                                    <c:if test="${li.ci_status==1}">답변완료</c:if>
-                                    <c:if test="${li.ci_status==2}">미답변</c:if>
-                                </td>
-                                <td>${li.ci_reg_dt}</td>
-                                <td>${li.ci_mod_dt}</td>
+                            <tr data-seq="${li.npi_seq}">
+                                <td>${li.npi_seq}</td>
+                                <td>${li.npi_author}</td>
+                                <td>${li.npi_company}</td>
+                                <td>${li.npi_title}</td>
+                                <td>${li.npi_content}</td>
+                                <td>${li.npi_link}</td>
+                                <td>${li.npi_view}</td>
+                                <td>${li.npi_reg_dt}</td>
                             </tr>
                         </c:forEach>
                     </tbody>

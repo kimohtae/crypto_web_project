@@ -55,7 +55,7 @@
     height: 1381px;
 }
 
-.contact_page_wrap{
+.news_page_wrap{
     width: 1040px; margin: 0 auto;
     padding: 30px;
     position: relative;
@@ -69,11 +69,11 @@
     
     transition: 1s;
 }
-.contact_page_wrap.active{
+.news_page_wrap.active{
     top: 0;
     box-shadow: none;
 }
-.contact_list_table{
+.news_list_table{
     border-collapse: collapse; 
     border-spacing: 0;		
     opacity: 0%;
@@ -82,12 +82,12 @@
     transition-delay: 1s;
     transition-duration: 1s;
 }
-.contact_list_table.active{
+.news_list_table.active{
     opacity: 100%;
 }
 
 
-.contact_list_table th{
+.news_list_table th{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding-top: 20px;
@@ -98,7 +98,7 @@
     text-align: center;
    
 }
-.contact_list_table td{
+.news_list_table td{
     border-bottom: 1px solid #999;
     font-size: 14px;
     padding: 8px;
@@ -108,7 +108,7 @@
     white-space : nowrap;
     text-overflow: ellipsis;
 }
-.contact_list_table th:first-child{
+.news_list_table th:first-child{
     width: 50px;
 }
 
@@ -122,7 +122,7 @@
 
 
 
-.contact_list_table tbody tr:hover{
+.news_list_table tbody tr:hover{
     background-color: rgb(227, 227, 227);
     cursor: pointer;
 }
