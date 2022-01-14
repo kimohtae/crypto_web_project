@@ -1,6 +1,6 @@
 /* new_page_info.css */
 
-#contact{
+#news{
     color: #000;
     font-weight: 600;
 }
@@ -126,218 +126,27 @@
     background-color: rgb(227, 227, 227);
     cursor: pointer;
 }
-
-
-
-.popup_container{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(153, 153, 153, 0.408);
-}
-.popup_wrap{
-    width: 800px;
-    height: 800px;
-    background-color: #fff;
-    position: absolute;
-    top: calc(50% - 400px);
-    left: calc(50% - 700px);
-    border-radius: 20px;
-    
-}
-.popup_wrap div{
-    width: 200px;
-    height: 24px;
-    margin: 20px;
-    padding-top: 4px;
-    padding-left: 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 400;
-    position: absolute;
-}
-#popup_number{
-    top: 10px;
-    left: 10px;
-    width: 130px;
-}
-#popup_author{
-    top: 10px;
-    left: 155px;
-    width: 428px;
-}
-#popup_status{
-    top: 10px;
-    left: 600px;
-    width: 150px;
-    height: 24px;
-    text-align: center;
-    padding-left: 0;
-    padding-top: 4px;
-    font-size: 20px;
-}
-#popup_title{
-    top: 45px;
-    left: 10px;
-    width: 730px;
-}
-#popup_cat{
-    top: 45px;
-    left: 575px;
-    width: 175px;
-    height: 22px;
-    text-align: center;
-    padding-left: 0;
-    padding-top: 6px;
-    font-size: 14px;
+.news_list_table tbody tr.active{
+    background-color: rgb(218, 218, 218);
 }
 
-
-#content_wrap{
-    width: 730px;
-    height: 570px;
-    top: 80px;
-    left: 10px;
-    padding: 5px 5px 35px 5px;
-    word-break: break-all;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-
-#popup_reg_dt{
-    top: 692px;
-    left: 10px;
-    width: 368px;
-    background-color: #fff;
-    padding:0;
-    text-align: center;
-}
-#popup_mod_dt{
-    top: 692px;
-    left: 381px;
-    width: 368px;
-    background-color: #fff;
-    padding: 0;
-    text-align: center;
-}
-.popup_container .popup_btn{
-    width: 250px;
-    height: 35px;
-    position: absolute;
-    bottom: -10px;
-    left: 248px;
+#delete_bun{
+    background-color: #eee;
+    width: 70px; height: 30px;
+    font-size: 16px; font-weight: 600;
     border: none;
-}
-#popup_delete_btn{
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    left: 20px;
-    cursor: pointer;
-}
-#popup_close_btn{
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    right: 20px;
-    cursor: pointer;
-}
-
-
-.reply_popup_wrap{
-    position: fixed;
-    width: 600px;
-    height: 800px;
-    background-color: #fff;
-    position: absolute;
-    top: calc(50% - 400px);
-    left: calc(50% + 101px);
-    border-radius: 20px;
-}
-.reply_list_box{
-    width: 500px;
-    height: 580px;
-    border-radius: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.456);
-    padding: 8px;
-    position: relative;
-    left: 40px;
-    top: 30px;
-    overflow: auto;
-}
-.reply_list{
-    margin: 0 10px;
-    padding: 5px;
-    height: auto;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.456);
-    position: relative;
-}
-.reply_id{
-    margin-top: 2px;
-    margin-bottom: 10px;
-    width: 280px;
-    height: 20px;
-    font-size: 16px;
-    font-weight: 400;
-}
-.reply_content{
-    width: 440px;
-    height: auto;
-    left: 20px;
-    top: 30px;
-    font-size: 14px;
-    font-weight: 200;
-    word-break: break-all;
-}
-.reply_reg_dt{
-    width: 160px;
-    height: 20px;
-    margin-top: 15px;
-    margin-left: 0;
-    font-size: 12px;
-    font-weight: 100;
-    color: gray;
-}
-.reply_del_btn{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
-    left: 440px;
-    top: 0;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: rgba(255, 0, 0, 0.598);
-}
-.admin_reply_list_box{
-    margin: 30px 40px;
-    padding-top: 5px;
-    position: relative;
-}
-#admin_reply_text{
-    width: 400px;
-    height: 80px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: 200;
+    border: 1px solid #999;
     border-radius: 5px;
-    border: 1px solid gray;
+    transition: 0.1s;
+    margin: 5px;
+    color: rgba(255, 0, 0, 0.544);
+    width: 60px;
 }
-#admin_reply_btn{
-    width: 100px;
-    height: 102px;
-    position: absolute;
-    top: 5px;
-    right: 0px;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: 700;
+#delete_bun:hover{
+    background-color: rgba(148, 89, 0, 0.244);
 }
+
+
 
 
 

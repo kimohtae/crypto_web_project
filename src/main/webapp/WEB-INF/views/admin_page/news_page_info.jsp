@@ -21,12 +21,12 @@
             <a href="/admin/member" id="member">Member</a>
             <a href="/admin/post" id="post">Post</a>
             <a href="/admin/contact" id="contact">Contact</a>
-            <a href="/admin/news" id="news">news</a>
+            <a href="/admin/news" id="news">News</a>
             <button><i class="fas fa-ellipsis-h"></i></button>
-            
         </div>
         <div class="page_container">
             <div class="news_page_wrap">
+                <button id="delete_bun">삭제</button>
                 <table class="news_list_table">
                     <thead>
                         <tr>
@@ -47,8 +47,8 @@
                             </tr>
                         </c:if>
                         <c:forEach items="${data.list}" var="li">
-                            <tr data-seq="${li.npi_seq}">
-                                <td>${li.npi_seq}</td>
+                            <tr id="${li.npi_seq}s" data-seq="${li.npi_seq}s" class="news_data">
+                                <td>${li.npi_seq}<input type="checkbox" style="display: none;"></td>
                                 <td>${li.npi_author}</td>
                                 <td>${li.npi_company}</td>
                                 <td>${li.npi_title}</td>
@@ -71,29 +71,6 @@
         </div>
     </div>
     <div id="sending" offset="${data.offset}" page="${data.page}" cnt="${data.cnt}" style="display:none"></div>
-    <div class="popup_container" style="display: none;">
-        <div class="popup_wrap">
-            <div id="popup_number"></div>
-            <div id="popup_author"></div>
-            <div id="popup_title"></div>
-            <div id="content_wrap"></div>
-            <div id="popup_status"></div>
-            <div id="popup_reg_dt"></div>
-            <div id="popup_mod_dt"></div>
-            <div class="popup_btn">
-                <button id="popup_delete_btn">삭제</button>
-                <button id="popup_close_btn">취소</button>
-            </div>
-        </div>
-        <div class="reply_popup_wrap" style="display: none;">
-            <div class="reply_list_box">
-            </div>
-            <div class="admin_reply_list_box">
-                <input id="admin_reply_text" type="text">
-                <button id="admin_reply_btn">등록</button>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
 
