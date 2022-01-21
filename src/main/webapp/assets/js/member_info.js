@@ -122,7 +122,7 @@ $(function(){
                     "mi_email":$("#"+select+" .mod_email").val(),
                     "mi_image":$("#"+select+" .mod_image").val()
                 }
-                console.log(data)
+                
                 $.ajax({
                     url:"/admin/member/update",
                     type:"patch",

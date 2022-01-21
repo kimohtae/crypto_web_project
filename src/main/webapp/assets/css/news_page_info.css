@@ -61,7 +61,7 @@
     position: relative;
     top: 40px;
     left: 0;
-    background-color: rgb(235, 235, 235);
+    background-color: #fff;
     border-radius: 10px;
     height: 1321px;
     box-shadow: 5px 5px 5px 5px gray;
@@ -123,11 +123,11 @@
 
 
 .news_list_table tbody tr:hover{
-    background-color: rgb(227, 227, 227);
+    box-shadow: 0 0 40px #14df80a6;
     cursor: pointer;
 }
 .news_list_table tbody tr.active{
-    background-color: rgb(218, 218, 218);
+    background-color: #14df803a;
 }
 
 #delete_bun{

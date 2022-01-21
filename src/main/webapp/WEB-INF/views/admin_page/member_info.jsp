@@ -118,7 +118,7 @@
                                 <td><input type="text" class="mod_phone" placeholder="ex) 01012345678"></td>
                                 <td><input type="text" class="mod_birth" placeholder="ex) 990814"></td>
                                 <td><input type="text" class="mod_email" placeholder="ex) mail@mail.com"></td>
-                                <td><input type="text" class="mod_image" placeholder="이미지"></td>
+                                <td><input type="file" class="mod_image" placeholder="이미지"></td>
                                 <td>상태</td>
                                 <td>등록일</td>
                             </tr>

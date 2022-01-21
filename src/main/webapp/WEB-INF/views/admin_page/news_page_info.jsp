@@ -55,7 +55,9 @@
                                 <td>${li.npi_content}</td>
                                 <td>${li.npi_link}</td>
                                 <td>${li.npi_view}</td>
-                                <td>${li.npi_reg_dt}</td>
+                                <td>
+                                    <fmt:formatDate value="${li.npi_reg_dt}" pattern="yyyy-MM-dd"/>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

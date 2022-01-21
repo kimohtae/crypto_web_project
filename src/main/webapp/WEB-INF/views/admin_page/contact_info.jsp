@@ -55,8 +55,12 @@
                                     <c:if test="${li.ci_status==1}">답변완료</c:if>
                                     <c:if test="${li.ci_status==2}">미답변</c:if>
                                 </td>
-                                <td>${li.ci_reg_dt}</td>
-                                <td>${li.ci_mod_dt}</td>
+                                <td>
+                                    <fmt:formatDate value="${li.ci_reg_dt}" pattern="yyyy-MM-dd"/>
+                                </td>
+                                <td>
+                                    <fmt:formatDate value="${li.ci_mod_dt}" pattern="yyyy-MM-dd"/>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

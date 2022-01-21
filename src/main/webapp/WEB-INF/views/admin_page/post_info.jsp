@@ -79,8 +79,12 @@
                                     <c:if test="${li.pi_status==2}">비공개</c:if>
                                     /${li.pi_views}/${li.pi_like}
                                 </td>
-                                <td>${li.pi_reg_dt}</td>
-                                <td>${li.pi_mod_dt}</td>
+                                <td>
+                                    <fmt:formatDate value="${li.pi_reg_dt}" pattern="yyyy-MM-dd"/>
+                                </td>
+                                <td>
+                                    <fmt:formatDate value="${li.pi_mod_dt}" pattern="yyyy-MM-dd"/>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
