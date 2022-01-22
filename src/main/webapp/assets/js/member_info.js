@@ -2,12 +2,33 @@
 $(function(){
     let AddBtn = true;
     let modBtn = true;
+    let modId;
+    let uploaded_img="";
 
     $(".member_page_wrap").addClass("active")
     $(".member_list_table").addClass("active")
     let i = ($("#sending").attr("offset")/30)+1;
     $(".pager_wrap #"+i).addClass("current")
     
+    $(".profile_img").click(function(){
+        $("#"+modId+" .img_file").trigger("click");
+    })
+    $(".modify_box .img_file").change(function(){
+        let form = $("#"+modId+" .form_img");
+        let formData = new FormData(form[0]);
+        $.ajax({
+            url:"/image/user",
+            type:"post",
+            data:formData,
+            contentType:false,
+            processData:false,
+            success: function(r){
+                $("#"+modId+" .profile_img").attr("src", "/image/user/"+r.image);
+                uploaded_img = r.image;
+            }
+        })
+    })
+
 
     let selected = new Set();
     $(".member_list_table .member_data").click(function(){
@@ -82,6 +103,7 @@ $(function(){
     $(".member_list_table .member_data").dblclick(function(){
         let selectOri = $(this).attr("tr-seq")
         let select = $(this).attr("tr-seq")*10000000000
+        modId = select;
         selected = new Set();
         $(".member_list_table .member_data").prop("checked",false)
         $(".member_list_table .member_data").removeClass("active")
@@ -108,7 +130,8 @@ $(function(){
                     $("#"+select+" .mod_birth").val(r.mi_birth)
                     $("#"+select+" .mod_email").val(r.mi_email)
                     $("#"+select+" .mod_name").val(r.mi_name)
-                    $("#"+select+" .mod_image").val(r.mi_image)
+                    $("#"+select+" .profile_img").attr("src", "/image/user/"+r.mi_image);
+                    // $("#"+select+" .mod_image").val(r.mi_image)
                 }
             })
 

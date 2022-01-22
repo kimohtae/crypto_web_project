@@ -167,8 +167,14 @@
 .modify_box.active{
     display: table-row;
 }
-
-
+.profile_img{
+    width: 40px; height: 40px;
+    border: 1px solid grey; border-radius: 50%;
+    cursor: pointer;
+}
+.modify_box .img_file{
+    display: none;
+}
 
 
 

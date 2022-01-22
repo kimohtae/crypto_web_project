@@ -70,7 +70,7 @@
                     </thead>
                     <tbody>
                         <tr class="input_box">
-                            <td>번호</td>
+                            <td><img src="/image/user/default.jpg" class="profile_img"></td>
                             <td><input type="text" id="input_id" placeholder="아이디"></td>
                             <td><input type="text" id="input_name" placeholder="이름"></td>
                             <td><input type="text" id="input_phone" placeholder="ex) 01012345678"></td>
@@ -112,13 +112,18 @@
                                 </td>
                             </tr>
                             <tr class="modify_box" tr-seq="${li.mi_seq}" id="${li.mi_seq*10000000000}">
-                                <td>번호</td>
+                                <td><img src="/image/user/default.jpg" class="profile_img"></td>
                                 <td><input type="text" class="mod_id" placeholder="아이디"></td>
                                 <td><input type="text" class="mod_name" placeholder="이름"></td>
                                 <td><input type="text" class="mod_phone" placeholder="ex) 01012345678"></td>
                                 <td><input type="text" class="mod_birth" placeholder="ex) 990814"></td>
                                 <td><input type="text" class="mod_email" placeholder="ex) mail@mail.com"></td>
-                                <td><input type="file" class="mod_image" placeholder="이미지"></td>
+                                <td>
+                                    이미지
+                                    <form class="form_img">
+                                        <input type="file" class="img_file" name="file">
+                                    </form> 
+                                </td>
                                 <td>상태</td>
                                 <td>등록일</td>
                             </tr>

@@ -10,8 +10,16 @@ import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -57,5 +65,22 @@ public class FileAPIController {
         resultMap.put("image", saveFileName);
 
         return resultMap;
+    }
+
+    @GetMapping("/image/{type}/{uri}")
+    public ResponseEntity<Resource> getImage(@PathVariable String type, @PathVariable String uri, HttpServletRequest request)throws Exception{
+        Path folderLocation = Paths.get(path+"/"+type);
+        Path filePath = folderLocation.resolve(uri);
+
+        Resource r = new UrlResource(filePath.toUri());
+        String contentType = request.getServletContext().getMimeType(r.getFile().getAbsolutePath());
+        if(contentType==null){
+            contentType = "application/octet-stream";
+        }
+
+        return ResponseEntity.ok()
+            .contentType(MediaType.parseMediaType(contentType))
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename*=\""+r.getFilename()+"\"")
+            .body(r);
     }
 }
