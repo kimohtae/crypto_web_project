@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PostInfoAPIController {
-    @Autowired PostService PService;
+    @Autowired PostService pService;
 
     @GetMapping("/admin/post/select")
     public PostInfoVO selectPostInfo(@RequestParam Integer seq){
-        return PService.selectPostInfo(seq);
+        return pService.selectPostInfo(seq);
     }
     @GetMapping("/admin/post/reply/select")
     public List<PostReplyInfoVO> selectPostReplyInfo(@RequestParam Integer seq){
-        return PService.selectPostReplyInfo(seq);
+        return pService.selectPostReplyInfo(seq);
     }
     @PatchMapping("/admin/post/update/toPrivate")
     public void updatePostToPrivateStatus(@RequestParam Integer seq){
-        PService.updatePostToPrivateStatus(seq);
+        pService.updatePostToPrivateStatus(seq);
     }
     @PatchMapping("/admin/post/update/toPublic")
     public void updatePostToPublicStatus(@RequestParam Integer seq){
-        PService.updatePostToPublicStatus(seq);
+        pService.updatePostToPublicStatus(seq);
     }
     @DeleteMapping("/admin/post/delete")
     public Map<String, Object> deletePostInfo(@RequestParam Integer seq){
-        return PService.deletePostInfo(seq);
+        return pService.deletePostInfo(seq);
     }
     @DeleteMapping("/admin/post/reply/delete")
     public Map<String, Object> deletePostReplyInfo(@RequestParam Integer seq){
-        return PService.deletePostReplyInfo(seq);
+        return pService.deletePostReplyInfo(seq);
     }
 }

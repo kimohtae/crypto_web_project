@@ -4,6 +4,7 @@ import com.ohtae.crypto.service.ContactService;
 import com.ohtae.crypto.service.MemberService;
 import com.ohtae.crypto.service.NewsService;
 import com.ohtae.crypto.service.PostService;
+import com.ohtae.crypto.service.StatisticsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -14,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminController {
-    @Autowired MemberService Mservice;
-    @Autowired PostService PService;
-    @Autowired ContactService CService;
-    @Autowired NewsService NService;
+    @Autowired MemberService mService;
+    @Autowired PostService pService;
+    @Autowired ContactService cService;
+    @Autowired NewsService nService;
+    @Autowired StatisticsService stService;
 
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
@@ -27,7 +29,7 @@ public class AdminController {
         @RequestParam @Nullable String order,
         @RequestParam @Nullable String adesc
         ){
-        model.addAttribute("data", Mservice.selectMemberList(offset,newOrder,order,adesc));
+        model.addAttribute("data", mService.selectMemberList(offset,newOrder,order,adesc));
 
         return "/admin_page/member_info";
     }
@@ -41,7 +43,7 @@ public class AdminController {
         @RequestParam @Nullable String order,
         @RequestParam @Nullable String dir
         ){
-        model.addAttribute("data", PService.selectPostList(offset, keyword, type, order, dir));
+        model.addAttribute("data", pService.selectPostList(offset, keyword, type, order, dir));
         
         return "/admin_page/post_info";
     }
@@ -51,7 +53,7 @@ public class AdminController {
         Model model,
         @RequestParam @Nullable Integer offset
         ){
-        model.addAttribute("data", CService.selectContactList(offset));
+        model.addAttribute("data", cService.selectContactList(offset));
         
         return "/admin_page/contact_info";
     }
@@ -64,7 +66,30 @@ public class AdminController {
         @RequestParam @Nullable String keyword,
         Model model
         ){
-        model.addAttribute("data", NService.selectNewsList(offset, order, keyword));
+        model.addAttribute("data", nService.selectNewsList(offset, order, keyword));
         return "/admin_page/news_page_info";
+    }
+
+    @GetMapping("/admin/statistics")
+    public String selectStatisticsList(
+        Model model,
+        @RequestParam @Nullable Integer offset,
+        @RequestParam @Nullable String keyword,
+        @RequestParam @Nullable String type,
+        @RequestParam @Nullable String order,
+        @RequestParam @Nullable String dir
+        ){
+        model.addAttribute("data",stService.selectStatisticsList());
+        return "/admin_page/statistics";
+    }
+
+    @GetMapping("/")
+    public String getMainPage(){
+        return "/index";
+    }
+
+    @GetMapping("/admin/summary")
+    public String getSummaryPage(){
+        return "/admin_page/summary";
     }
 }

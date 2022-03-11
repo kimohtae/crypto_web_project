@@ -15,6 +15,11 @@
     <select id="selectRecentSeq" resultType="java.lang.Integer">
         select mi_seq from member_info order by mi_seq desc limit 1
     </select>
+    <select id="selectLoginInfo" resultType="com.ohtae.crypto.data.MemberInfoVO">
+        select * from member_info where mi_id = #{id} limit 1
+    </select>
+
+
     
     
     <insert id="insertMemberInfo">

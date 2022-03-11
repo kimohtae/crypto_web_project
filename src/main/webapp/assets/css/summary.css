@@ -1,0 +1,103 @@
+/* post_info.css */
+
+
+.main_container{
+    width: 1130px;
+    padding: 15px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.591);
+}
+.main_upper_wrap{
+    width: 1100px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.main_upper_wrap > a{
+    text-decoration: none;
+    display: inline-block;
+    tab-size: 18px;
+    color: #444;
+    font-weight: 400;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+.main_upper_wrap > p:hover{
+    color: #000;
+    cursor: pointer;
+}
+.main_upper_wrap > button{
+    float: right;
+    margin: 0 10px;
+    color: #000;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 0;
+}
+.main_upper_wrap > button:hover{
+    background-color: #999;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page_container{
+    width: 1100px; margin: 0 auto;
+    position: relative;
+    top: 0;
+    height: 1381px;
+}
+
+.summary_page_wrap{
+    width: 1040px; margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 1321px;
+    box-shadow: 5px 5px 5px 5px gray;
+    opacity: 100%;
+    
+    transition: 1s;
+}
+.summary_page_wrap.active{
+    top: 0;
+    box-shadow: none;
+}
+
+.page_container .status_box{
+    width: 300px; height: 300px; padding: 25px;
+    margin: 0px 80px ; background-color: #ffeecd;
+    display: inline-block; margin-top: 0;
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.5);
+}
+.status_box h1{
+    text-align: center; font-size: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    font-family: 'Hi Melody', cursive;
+    font-weight: 800;
+}
+.status_box div{
+    margin: 15px; margin-top: 25px;
+}
+
+.status_box a, .status_box p{
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Hi Melody', cursive;
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+}
+.status_box .rank{
+    
+    margin: 0; margin-left: 10px;
+    padding: 5px;
+}

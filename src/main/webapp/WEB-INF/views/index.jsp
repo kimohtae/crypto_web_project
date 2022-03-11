@@ -9,48 +9,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/index.css">
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    <Script src="http://code.jquery.com/jquery-3.4.1.min.js"></Script>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="/assets/js/index.js"></script>
   
         
 
 </head>
 <body>
-    <div class="main_container">
-        <div class="main_upper_wrap">
-            <p id="news">News</p>
-            <p id=stra>Strategy</p>
-            <p id="com">Community</p>
-            <p id="adm">Administration</p>
-            <button><i class="fas fa-ellipsis-h"></i></button>
-            <div id="underline"></div>
-        </div>
-        <div class="page_container">
-            <div class="news_page_wrap">
-                <a href="/practice/page">something news</a>
-                <a href="#">something news</a>
-                <a href="#">something news</a>
-                <a href="#">something news</a>
+    <div class="login_wrap">
+        <div class="login_container">
+            <p class="line"></p>
+            <div class="login_top">
+                <h1>LOGIN</h1>
             </div>
-            <div class="stra_page_wrap">
-                <a href="#">something stra</a>
-                <a href="#">something stra</a>
-                <a href="#">something stra</a>
-                <a href="#">something stra</a>
+            <div class="login_mid">
+                <input type="text" class="account" placeholder="User ID">
+                <input type="password" class="password" placeholder="Password">
             </div>
-            <div class="com_page_wrap">
-                <a href="#">something comm</a>
-                <a href="#">something comm</a>
-                <a href="#">something comm</a>
-                <a href="#">something comm</a>
-            </div>
-            <div class="admin_page_wrap">
-                <a href="/admin/member">something admin</a>
-                <a href="#">something admin</a>
-                <a href="#">something admin</a>
-                <a href="#">something admin</a>
+            <div class="login_bot">
+                <button id="login">Sign In</button>
             </div>
         </div>
     </div>
+    <div class="backgroud"></div>
 </body>
 </html>

@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class NewsPageAPIController {
-    @Autowired NewsPageInfoMapper MPService;
+    @Autowired NewsPageInfoMapper MpService;
 
     @PostMapping("/admin/news/insert")
     public void insertNewsInfo(@RequestBody NewsPageInfoVO data){
-        MPService.insertNewsInfo(data);
+        MpService.insertNewsInfo(data);
     }
     @DeleteMapping("/admin/news/delete")
     public void deleteNewsInfo(@RequestParam Integer seq){
-        MPService.deleteNewsInfo(seq);
+        MpService.deleteNewsInfo(seq);
     }    
 }

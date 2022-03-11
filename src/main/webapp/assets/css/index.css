@@ -1,124 +1,66 @@
 /* index.css */
+.backgroud{
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -10;
+    display: inline;
+    background-image: url(/assets/images/wood-1866654.jpg);
+    background-repeat: no-repeat; /* 배경이미지X */
+    background-size: cover; /* 요소를 비율에 맞게 커버 */
+    background-position: center; /* 이미지를 요소의 정가운데로 처리 */
+    background-attachment: fixed; /* 스크롤바 움직일때 이미지가 따라다님 */
+    -webkit-filter: blur(1px); 
+    -moz-filter: blur(1px); 
+    -o-filter: blur(1px); 
+    -ms-filter: blur(1px); 
+    filter: blur(15px);
+}
 
-.main_container{
-    width: 1130px;
-    padding: 15px 0;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    margin: 10px auto;
-    background-color: rgba(255, 255, 255, 0.591);
+.login_wrap{
+    width: 400px; height: 350px; margin: 350px auto;
+    background-color: rgba(0, 0, 0, 0.254);
+    border-radius: 5px;
 }
-.main_upper_wrap{
-    width: 1100px;
-    margin: auto;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #fff;
+.login_container{
+    width: 300px; height: 300px; position: relative;
+    display: block; top: 30px; margin: auto;
 }
-
-.main_upper_wrap > p{
-    text-decoration: none;
-    display: inline-block;
-    tab-size: 18px;
-    color: #444;
-    font-weight: 400;
-    margin: 0 10px;
-    transition: 0.2s;
+.line{
+    width: 100px; height: 5px;
+    display: block;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.398);
+    margin: 0px auto;
 }
-.main_upper_wrap > p:hover{
-    color: #000;
-    cursor: pointer;
+.login_top{
+    text-align: center;
+    margin: 30px;
+    
 }
-.main_upper_wrap > button{
-    float: right;
-    margin: 0 10px;
-    color: #000;
+.login_top h1{
+    font-size: 30px;
+    color: #fff; 
+}
+.login_mid input{
+    width: 270px; border: 1px solid rgba(255, 255, 255, 0.179);
+    height: 40px; margin: 10px 0;
     background-color: transparent;
-    border-radius: 10px;
-    border: 0;
+    display: block; padding-left: 25px;
+    font-size: 20px; color: #fff;
+    border-radius: 5px;
 }
-.main_upper_wrap > button:hover{
-    background-color: #999;
-    color: #fff;
-    cursor: pointer;
+.login_mid input::placeholder{
+    color: rgba(255, 255, 255, 0.487);
+    font-size: 20px;
 }
-#underline{
-    position: absolute;
-    width: 0;
-    background-color: black;
-    top: 0;
-    left: 0;
-    height: 0;
-    transition: 0.2s;
+.login_bot #login{
+    width: 301px; height: 40px;
+    background-color: rgba(0, 0, 0, 0.453);
+    left: -1px; position: relative;
+    border: none; border-radius: 5px;
+    color: #FFF; font-size: 20px;
+    cursor: pointer; margin-top: 10px;
 }
-.page_container{
-    width: 1000px; margin: 0 auto;
-    position: relative;
-    top: 0;
-    height: 1381px;
+.login_bot #login:hover{
+    background-color: rgba(0, 0, 0, 0.652);
 }
-.news_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
-}
-.stra_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
-}
-.com_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
-}
-.admin_page_wrap{
-    width: 1000px; margin: 40px auto;
-    position: absolute;
-    top: 0;
-    left: -1500px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    height: 1381px;
-    box-shadow: 5px 5px 5px 5px gray;
-    opacity: 0;
-    transition: 1s;
-}
-.news_page_wrap.active{
-    opacity: 100%;
-    left: 0;
-}
-.stra_page_wrap.active{
-    opacity: 100%;
-    left: 0;
-}
-.com_page_wrap.active{
-    opacity: 100%;
-    left: 0;
-}
-.admin_page_wrap.active{
-    opacity: 100%;
-    left: 0;
-}
-

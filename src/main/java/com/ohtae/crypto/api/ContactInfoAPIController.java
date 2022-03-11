@@ -18,33 +18,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ContactInfoAPIController {
-    @Autowired ContactService CService;
+    @Autowired ContactService cService;
 
     @GetMapping("/admin/contact/select")
     public ContactInfoVO selectContactInfo(@RequestParam Integer seq){
-        return CService.selectContactInfo(seq);
+        return cService.selectContactInfo(seq);
     }
     @GetMapping("/admin/contact/reply/select")
     public List<ContactReplyInfoVO> selectContactReplyInfo(@RequestParam Integer seq){
-        return CService.selectContactReplyInfo(seq);
+        return cService.selectContactReplyInfo(seq);
     }
     @PostMapping("/admin/contact/reply/insert")
     public void insertContactReplyInfo(@RequestBody ContactReplyInfoVO data){
-        CService.insertContactReplyInfo(data);
+        cService.insertContactReplyInfo(data);
     }
     @PatchMapping("/admin/contact/update")
     public void updateContactStatus(
         @RequestParam Integer seq,
         @RequestParam Integer status
         ){
-        CService.updateContactStatus(seq,status);
+        cService.updateContactStatus(seq,status);
     }
     @DeleteMapping("/admin/contact/delete")
     public Map<String, Object> deleteContactInfo(@RequestParam Integer seq){
-        return CService.deleteContactInfo(seq);
+        return cService.deleteContactInfo(seq);
     }
     @DeleteMapping("/admin/contact/reply/delete")
     public Map<String, Object> deleteContactReplyInfo(@RequestParam Integer seq){
-        return CService.deleteContactReplyInfo(seq);
+        return cService.deleteContactReplyInfo(seq);
     }
 }

@@ -1,6 +1,6 @@
 /* post_info.css */
 
-#post{
+#stat{
     color: #000;
     font-weight: 600;
 }
@@ -55,7 +55,7 @@
     height: 1381px;
 }
 
-.post_page_wrap{
+.stat_page_wrap{
     width: 1040px; margin: 0 auto;
     padding: 30px;
     position: relative;
@@ -69,11 +69,11 @@
     
     transition: 1s;
 }
-.post_page_wrap.active{
+.stat_page_wrap.active{
     top: 0;
     box-shadow: none;
 }
-.post_list_table{
+.stat_list_table{
     border-collapse: collapse; 
     border-spacing: 0;		
     opacity: 0%;
@@ -82,12 +82,12 @@
     transition-delay: 1s;
     transition-duration: 1s;
 }
-.post_list_table.active{
+.stat_list_table.active{
     opacity: 100%;
 }
 
 
-.post_list_table th{
+.stat_list_table th{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding-top: 20px;
@@ -98,7 +98,7 @@
     text-align: center;
     font-family: 'Yeon Sung', cursive;
 }
-.post_list_table td{
+.stat_list_table td{
     border-bottom: 1px solid #999;
     font-size: 14px;
     padding: 8px;
@@ -109,7 +109,7 @@
     text-overflow: ellipsis;
     font-family: 'Yeon Sung', cursive;
 }
-.post_list_table th:first-child{
+.stat_list_table th:first-child{
     width: 50px;
 }
 #seq_arrow{
@@ -173,11 +173,11 @@
     background-color: rgba(148, 89, 0, 0.244);
 }
 
-.post_list_table tbody tr:hover{
+.stat_list_table tbody tr:hover{
     box-shadow: 0 0 40px #14df80a6;
     cursor: pointer;
 }
-.post_list_table tbody tr.active{
+.stat_list_table tbody tr.active{
     background-color: #14df803a;
     
 }

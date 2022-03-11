@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohtae.crypto.mapper.StatisticsInfoMapper">
+    <select id="selectStatisticsList" resultType="com.ohtae.crypto.data.StatisticsInfoVO">
+        select a.*,b.sti_name,c.mi_name from statistics_info a join statistics_table_info b 
+        on a.si_sti_seq = b.sti_seq join member_info c 
+        on a.si_mi_seq = c.mi_seq;
+    </select>
+
+
+
+
+    <update id="updateStatisticsStatus" parameterType="com.ohtae.crypto.data.StatisticsInfoVO">
+        <selectKey keyProperty="si_status" resultType="int" order="BEFORE">
+            select si_status from statistics_info where si_seq = #{si_seq};
+        </selectKey>
+        
+        <if test="si_status == 1"> 
+            update statistics_info set si_status = 2 where si_seq = #{si_seq}
+        </if>
+        <if test="si_status == 2"> 
+            update statistics_info set si_status = 1 where si_seq = #{si_seq}
+        </if>
+        
+    </update>
+
+
+
+
+    <delete id="deleteStatisticsInfo">
+        delete from statistics_info where si_seq = #{seq}
+    </delete>
+</mapper>

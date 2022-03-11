@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/post_info.css">
+    <link rel="stylesheet" href="/assets/css/statistics.css">
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
-    <script src="/assets/js/post_info.js"></script>
+    <script src="/assets/js/statistics.js"></script>
 
         
 
@@ -27,7 +27,7 @@
             
         </div>
         <div class="page_container">
-            <div class="post_page_wrap">
+            <div class="stat_page_wrap">
                 <div class="button_container">
                     <div class="button_wrap">
                         <button id="delete_btn">삭제</button>
@@ -44,7 +44,7 @@
                         <button class="search_post_btn"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                <table class="post_list_table">
+                <table class="stat_list_table">
                     <thead>
                         <tr>
                             <th>번호<i id="seq_arrow" class="fas fa-arrows-alt-v"></i></th>
@@ -58,49 +58,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:if test="${data.cnt==0}">
-                            <tr>
-                                <td id="nodata" colspan="8">게시물 정보가 없습니다.</td>
-                            </tr>
-                        </c:if>
-                        <c:forEach items="${data.list}" var="li">
-                            <c:if test="${li.pi_status==1}">
-                                <tr id="${li.pi_seq}p" data-seq="${li.pi_seq}p">
-                            </c:if>
-                            <c:if test="${li.pi_status==2}">
-                                <tr id="${li.pi_seq}n" data-seq="${li.pi_seq}n">
-                            </c:if>
-                                <td>${li.pi_seq}<input class="check_box" type="checkbox"></td>
-                                <td>${li.mi_id}</td>
-                                <td>${li.pi_title}</td>
-                                <td style="width: 40px; text-overflow: ellipsis;">${li.pi_contents}</td>
-                                <td>${li.ti_table}/${li.iti_type}</td>
+                        <c:forEach items="${data}" var="item">
+                            <tr class="${item.si_seq}s" data-seq="${item.si_seq}s">
+                                <td>${item.si_seq}</td>
+                                <td>${item.mi_name}</td>
+                                <td>${item.si_title}</td>
+                                <td>${item.si_contents}</td>
+                                <td>${item.sti_name}</td>
+                                <td>${item.si_status}/${item.si_view}/${item.si_like}</td>
                                 <td>
-                                    <c:if test="${li.pi_status==1}">공개</c:if>
-                                    <c:if test="${li.pi_status==2}">비공개</c:if>
-                                    /${li.pi_views}/${li.pi_like}
+                                    <fmt:formatDate value="${item.si_reg_dt}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                 </td>
                                 <td>
-                                    <fmt:formatDate value="${li.pi_reg_dt}" pattern="yyyy-MM-dd"/>
-                                </td>
-                                <td>
-                                    <fmt:formatDate value="${li.pi_mod_dt}" pattern="yyyy-MM-dd"/>
+                                    <fmt:formatDate value="${item.si_mod_dt}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                 </td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
-                <div class="pager_wrap">
-                    <span id="page_left_move"><</span>
-                    <c:forEach begin="1" end="${data.page}" var="i">
-                        <a id="${i}" href="/admin/post?offset=${(i-1)*20}&keyword=${data.keyword}&type=${data.type}&order=${data.order}&dir=${data.dir}">${i}</a>
-                    </c:forEach>
-                    <span id="page_right_move">></span>
-                </div>
             </div>
         </div>
     </div>
-    <p id="sending" keyword="${data.keyword}" type=${data.type} order=${data.order} dir=${data.dir} cnt=${data.cnt} offset=${data.offset} page=${data.page}></p>
     <div class="popup_container" style="display: none;">
         <div class="popup_wrap">
             <div id="popup_number"></div>

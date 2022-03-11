@@ -5,6 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import com.ohtae.crypto.data.MemberHistoryVO;
 import com.ohtae.crypto.data.MemberInfoVO;
 import com.ohtae.crypto.mapper.MemberInfoMapper;
@@ -50,6 +52,44 @@ public class MemberService {
     public MemberInfoVO selectMemberInfo(Integer seq){
         return Mmapper.selectMemberInfo(seq);
     }
+    public Map<String,Object> selectLoginInfo(MemberInfoVO data, HttpSession session)throws Exception{
+        Map<String,Object> resultMap = new LinkedHashMap<>();
+        if(data.getMi_id().equals("") || data.getMi_id() == null){
+            resultMap.put("status", false);
+            resultMap.put("message", "아이디를 입력해 주세요.");
+            return resultMap;
+        }
+        if(data.getMi_pwd().equals("") || data.getMi_pwd() == null){
+            resultMap.put("status", false);
+            resultMap.put("message", "비밀번호를 입력해 주세요.");
+            return resultMap;
+        }
+
+        MemberInfoVO member_info = Mmapper.selectLoginInfo(data.getMi_id());
+        
+        String origin_pwd = member_info.getMi_pwd();
+        String input_pwd = AESAlgorithm.Encrypt(data.getMi_pwd());
+
+        if(!origin_pwd.equals(input_pwd)){
+            resultMap.put("status", false);
+            resultMap.put("message", "잘못된 아이디 혹은 비밀번호입니다.");
+            return resultMap;
+        }
+        if(member_info.getMi_status() != 5){
+            resultMap.put("status", false);
+            resultMap.put("message", "접근 권한이 없는 아이디입니다.");
+            return resultMap;
+        }
+
+        member_info.setMi_pwd(null);
+        session.setAttribute("login_info", member_info);
+        resultMap.put("status", true);
+        return resultMap;
+    }
+
+
+
+
 
     public Map<String, Object> insertMemberInfo(MemberInfoVO data){
         Map<String, Object> map = new LinkedHashMap<String, Object>();
@@ -171,4 +211,8 @@ public class MemberService {
         Mmapper.insertMemberHis(H);
         Mmapper.deleteMemberInfo(seq);
     }
+
+
+
+
 }

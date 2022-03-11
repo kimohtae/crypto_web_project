@@ -13,6 +13,7 @@ public interface MemberInfoMapper {
     public MemberInfoVO selectMemberInfo(Integer seq);
     public Integer selectMemberCounts();
     public Integer selectRecentSeq();
+    public MemberInfoVO selectLoginInfo(String id);
     
 
     public void insertMemberInfo(MemberInfoVO data);
