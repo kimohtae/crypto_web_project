@@ -1,5 +1,7 @@
 package com.ohtae.crypto.controller;
 
+import java.util.Map;
+
 import com.ohtae.crypto.service.ContactService;
 import com.ohtae.crypto.service.MemberService;
 import com.ohtae.crypto.service.NewsService;
@@ -75,11 +77,17 @@ public class AdminController {
         Model model,
         @RequestParam @Nullable Integer offset,
         @RequestParam @Nullable String keyword,
-        @RequestParam @Nullable String type,
-        @RequestParam @Nullable String order,
-        @RequestParam @Nullable String dir
+        @RequestParam @Nullable String type
         ){
-        model.addAttribute("data",stService.selectStatisticsList());
+        Map<String,Object> resultMap = stService.selectStatisticsList(type, keyword, offset);
+        if(type == null)type = "all";
+        if(offset == null)offset = 0;
+        model.addAttribute("type",type);
+        model.addAttribute("offset",offset);
+        model.addAttribute("keyword",keyword);
+        model.addAttribute("page",resultMap.get("page"));
+        model.addAttribute("data",resultMap.get("data"));
+        model.addAttribute("category",stService.selectStatisticsTableList());
         return "/admin_page/statistics";
     }
 

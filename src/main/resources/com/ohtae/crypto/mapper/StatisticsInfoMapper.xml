@@ -4,8 +4,57 @@
     <select id="selectStatisticsList" resultType="com.ohtae.crypto.data.StatisticsInfoVO">
         select a.*,b.sti_name,c.mi_name from statistics_info a join statistics_table_info b 
         on a.si_sti_seq = b.sti_seq join member_info c 
-        on a.si_mi_seq = c.mi_seq;
+        on a.si_mi_seq = c.mi_seq
+        <if test="type == 'all'">
+            where si_title like #{keyword} or si_contents like #{keyword} or mi_name like #{keyword}
+        </if>
+        <if test="type == 'title'">
+            where si_title like #{keyword}
+        </if>
+        <if test="type == 'contents'">
+            where si_contents like #{keyword}
+        </if>
+        <if test="type == 'name'">
+            where mi_name like #{keyword}
+        </if>
+        order by si_seq desc
+        limit 10 offset #{offset}
     </select>
+    <select id="selectStatisticsCnt" resultType="java.lang.Integer">
+        select count(*) from statistics_info a join member_info b 
+        on a.si_mi_seq = b.mi_seq
+        <if test="type == 'all'">
+            where si_title like #{keyword} or si_contents like #{keyword} or mi_name like #{keyword}
+        </if>
+        <if test="type == 'title'">
+            where si_title like #{keyword}
+        </if>
+        <if test="type == 'contents'">
+            where si_contents like #{keyword}
+        </if>
+        <if test="type == 'name'">
+            where mi_name like #{keyword}
+        </if>
+    </select>
+    <select id="selectStatisticsInfoBySeq" resultType="com.ohtae.crypto.data.StatisticsInfoVO">
+        select a.*,b.sti_name,c.mi_name from statistics_info a join statistics_table_info b 
+        on a.si_sti_seq = b.sti_seq join member_info c 
+        on a.si_mi_seq = c.mi_seq
+        where a.si_seq = #{seq};
+    </select>
+    <select id="selectStatisticsTableList" resultType="com.ohtae.crypto.data.StatisticsTableVO">
+        select * from statistics_table_info;
+    </select>
+
+
+
+
+    <insert id="insertStatisticsInfo">
+        insert into statistics_info
+            (si_mi_seq,si_sti_seq,si_title,si_contents,si_img_url)
+        values
+            (#{si_mi_seq},#{si_sti_seq},#{si_title},#{si_contents},#{si_img_url})
+    </insert>
 
 
 

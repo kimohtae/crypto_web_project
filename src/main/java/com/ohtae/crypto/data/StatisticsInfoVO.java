@@ -18,6 +18,7 @@ public class StatisticsInfoVO {
     private Integer si_status;
     private Date si_reg_dt;
     private Date si_mod_dt;
+    private String si_img_url;
 
     private String sti_name;
     private String mi_name;
