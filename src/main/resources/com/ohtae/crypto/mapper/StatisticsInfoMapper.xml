@@ -18,7 +18,7 @@
             where mi_name like #{keyword}
         </if>
         order by si_seq desc
-        limit 10 offset #{offset}
+        limit 20 offset #{offset}
     </select>
     <select id="selectStatisticsCnt" resultType="java.lang.Integer">
         select count(*) from statistics_info a join member_info b 

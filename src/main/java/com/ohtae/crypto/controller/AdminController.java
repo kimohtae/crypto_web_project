@@ -2,6 +2,7 @@ package com.ohtae.crypto.controller;
 
 import java.util.Map;
 
+import com.ohtae.crypto.service.CategoryService;
 import com.ohtae.crypto.service.ContactService;
 import com.ohtae.crypto.service.MemberService;
 import com.ohtae.crypto.service.NewsService;
@@ -22,6 +23,7 @@ public class AdminController {
     @Autowired ContactService cService;
     @Autowired NewsService nService;
     @Autowired StatisticsService stService;
+    @Autowired CategoryService cgService;
 
     @GetMapping("/admin/member")
     public String getMemberInfoPage(
@@ -89,6 +91,18 @@ public class AdminController {
         model.addAttribute("data",resultMap.get("data"));
         model.addAttribute("category",stService.selectStatisticsTableList());
         return "/admin_page/statistics";
+    }
+
+    @GetMapping("/admin/category")
+    public String selectCategoryList(Model model, @RequestParam @Nullable Integer offset){
+        model.addAttribute("NewsData",cgService.selectNewsCategoryList(offset));
+        model.addAttribute("ComuData",cgService.selectCommunityCategoryList(offset));
+        model.addAttribute("StatData",cgService.selectStatisticsCategoryList(offset));
+        model.addAttribute("NewsPage",cgService.selectNewsCategoryCnt());
+        model.addAttribute("ComuPage",cgService.selectCommunityCategoryCnt());
+        model.addAttribute("StatPage",cgService.selectStatisticsCategoryCnt());
+        model.addAttribute("Table",cgService.selectTableList());
+        return "/admin_page/category_info";
     }
 
     @GetMapping("/")

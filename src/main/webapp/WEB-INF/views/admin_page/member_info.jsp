@@ -21,6 +21,7 @@
         <div class="main_upper_wrap">
             <a href="/admin/member" id="member">Member</a>
             <a href="/admin/contact" id="contact">Contact</a>
+            <a href="/admin/category" id="category">Category</a>
             <a href="/admin/news" id="news">News</a>
             <a href="/admin/post" id="post">Post</a>
             <a href="/admin/statistics" id="stat">Statistics</a>
@@ -103,10 +104,13 @@
                                         <span style="color: green">정상</span> 
                                     </c:if>
                                     <c:if test="${li.mi_status == 3}">
-                                        <span style="color: rgb(0, 0, 0)">정지</span> 
+                                        <span style="color: rgb(121, 121, 121)">정지</span> 
                                     </c:if>
                                     <c:if test="${li.mi_status == 4}">
-                                        <span style="color: red">탈퇴</span> 
+                                        <span style="color: red;">탈퇴</span> 
+                                    </c:if>
+                                    <c:if test="${li.mi_status == 5}">
+                                        <span style="color: rgb(0, 0, 0)">관리자</span> 
                                     </c:if>
                                 </td>
                                 <td>${li.mi_reg_dt}<input type="checkbox" class="check_box">

@@ -1,0 +1,286 @@
+/* new_page_info.css */
+
+#category{
+    color: #000;
+    font-weight: 600;
+}
+
+.NewsTable.gone, .CommuTable.gone, .StatTable.gone{
+    position: absolute;
+    left: -1300px;
+    opacity: 0;
+}
+.CommuTable, .StatTable{
+    position: absolute;
+    left: -1300px;
+    opacity: 0;
+}
+
+.main_container{
+    width: 1130px;
+    padding: 15px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.591);
+}
+.main_upper_wrap{
+    width: 1100px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.main_upper_wrap > a{
+    text-decoration: none;
+    display: inline-block;
+    tab-size: 18px;
+    color: #444;
+    font-weight: 400;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+.main_upper_wrap > p:hover{
+    color: #000;
+    cursor: pointer;
+}
+.main_upper_wrap > button{
+    float: right;
+    margin: 0 10px;
+    color: #000;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 0;
+}
+.main_upper_wrap > button:hover{
+    background-color: #999;
+    color: #fff;
+    cursor: pointer;
+}
+
+.category_container{
+    width: 1100px; margin: 0 auto;
+    position: relative;
+    top: 0;
+    height: 1381px;
+}
+
+.category_page_wrap{
+    width: 1040px; margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 1321px;
+    box-shadow: 5px 5px 5px 5px gray;
+    opacity: 100%;
+    
+    transition: 1s;
+}
+.category_page_wrap.active{
+    top: 0;
+    box-shadow: none;
+}
+.category_list_table{
+    border-collapse: collapse; 
+    border-spacing: 0;		
+    opacity: 0%;
+    width: 100%; 
+    table-layout: fixed;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+.category_list_table.active{
+    opacity: 100%;
+}
+
+
+.category_list_table th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    width: 114px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Yeon Sung', cursive;
+}
+.category_list_table td{
+    border-bottom: 1px solid #999;
+    font-size: 14px;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    overflow:hidden;
+    white-space : nowrap;
+    text-overflow: ellipsis;
+    font-family: 'Yeon Sung', cursive;
+}
+.category_list_table th:first-child{
+    width: 50px;
+}
+
+
+
+
+
+.category_list_table tbody tr:hover{
+    box-shadow: 0 0 40px #14df80a6;
+    cursor: pointer;
+}
+.category_list_table tbody tr.active{
+    background-color: #14df803a;
+}
+
+.button_wrap{
+    display: inline-block;
+    margin: 5px;
+    left: 36px;
+    top: 11px;
+}
+.add_btn, .delete_btn, .initial_btn{
+    background-color: #eee;
+    color: rgb(0, 0, 0);
+    width: 70px; height: 30px;
+    font-size: 16px; font-weight: 600;
+    border: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    transition: 0.1s;
+    margin: 5px;
+    margin-left: -5px;
+}
+
+.add_btn{
+    color: rgba(21, 0, 255, 0.544);
+    width: 60px;
+}
+.delete_btn{
+    color: rgba(255, 0, 0, 0.544);
+    width: 60px;
+}
+.initial_btn{
+    color: rgba(0, 0, 0, 0.544);
+    width: 60px;
+}
+.add_btn:hover, .delete_btn:hover, .status_btn:hover, .initial_btn:hover{
+    background-color: rgba(148, 89, 0, 0.244);
+}
+
+
+.title{
+    font-size: 30px;
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 100px);
+    
+}
+.category_list{
+    position: absolute;
+    display: inline-block;
+    top: 45px;
+    right: 50px;
+}
+.category_list select{
+    border: 1px solid #999;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 2px 5px;
+}
+
+
+
+
+
+.pager_wrap{
+    text-align: center;
+    margin: 20px;
+}
+.pager_wrap span{
+    font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+}
+.pager_wrap a{
+    padding: 4px;
+    text-decoration: none;
+    color: #000;
+}
+.pager_wrap a:hover{
+    text-decoration: underline;
+}
+.pager_wrap a.current{
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+
+
+.popup_container, .container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(153, 153, 153, 0.408);
+}
+.popup_wrap{
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    border-radius: 20px;
+}
+.popup_contents{
+    margin: 20px;
+    text-align: center;
+}
+#add_popup_name, #add_popup_order{
+    width: 140px;
+    height: 24px;
+    margin: 2px;
+    padding-top: 4px;
+    padding-left: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+}
+.popup_name{
+    font-size: 27px;
+    margin: 20px 0;
+}
+#add_popup_name{
+    padding-bottom: 5px;
+}
+#add_popup_order{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+#add_popup_name::placeholder{
+    font-size: 12px;
+}
+
+#popup_add_btn, #popup_modify_btn, #popup_close_btn{
+    width: 65px; height: 30px; cursor: pointer;
+
+}
+#popup_add_btn{
+    color: blue;
+}
+#popup_modify_btn{
+    color: blue;
+}
+#popup_close_btn{
+    color: red;
+    margin-left: 10px;
+}
+
+

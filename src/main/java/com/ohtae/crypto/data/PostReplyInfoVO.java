@@ -15,5 +15,5 @@ public class PostReplyInfoVO {
 
     private String pri_format_dt;
     private String pri_format_like;
-    private String mi_name;
+    private String mi_id;
 }

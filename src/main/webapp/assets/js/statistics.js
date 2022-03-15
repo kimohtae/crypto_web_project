@@ -1,13 +1,13 @@
 // post_info.js
 $(function(){
-    let seq_map = new Map();
+    
     $(".stat_page_wrap").addClass("active")
     $(".stat_list_table").addClass("active")
     $(".stat_list_table tbody tr input").css("display","none")
     $("#keyword_type").val(type)
     $(".search_post_box").val(keyword)
 
-
+    let seq_map = new Map();
     $("tbody tr").click(function(){
         let seq = $(this).attr("data-seq");
         if(seq_map.get(seq) == null || !seq_map.get(seq)){
@@ -257,7 +257,7 @@ $(function(){
                 $("#content_wrap").val(r.si_contents);
                 $("#popup_cat").val(r.si_sti_seq);
                 let status = r.si_status==1?"공개":"비공개";
-                $("#popup_status").html("조회:"+r.si_views+" 추천:"+r.si_like+" 상태:"+status);
+                $("#popup_status").html("조회:"+r.si_view+" 추천:"+r.si_like+" 상태:"+status);
                 $("#popup_reg_dt").html("등록일: "+r.si_reg_dt);
                 $("#popup_mod_dt").html("수정일: "+r.si_mod_dt);
                 $("#si_img_wrap").attr("style", "background-image:url(http://localhost:8088/image/statistics/"+r.si_img_url+")");

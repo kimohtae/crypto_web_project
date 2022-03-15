@@ -27,6 +27,7 @@
         <div class="main_upper_wrap">
             <a href="/admin/member" id="member">Member</a>
             <a href="/admin/contact" id="contact">Contact</a>
+            <a href="/admin/category" id="category">Category</a>
             <a href="/admin/news" id="news">News</a>
             <a href="/admin/post" id="post">Post</a>
             <a href="/admin/statistics" id="stat">Statistics</a>

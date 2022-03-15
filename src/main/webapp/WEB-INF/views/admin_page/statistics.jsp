@@ -26,6 +26,7 @@
         <div class="main_upper_wrap">
             <a href="/admin/member" id="member">Member</a>
             <a href="/admin/contact" id="contact">Contact</a>
+            <a href="/admin/category" id="category">Category</a>
             <a href="/admin/news" id="news">News</a>
             <a href="/admin/post" id="post">Post</a>
             <a href="/admin/statistics" id="stat">Statistics</a>
@@ -55,12 +56,12 @@
                 <table class="stat_list_table">
                     <thead>
                         <tr>
-                            <th>번호<i id="seq_arrow" class="fas fa-arrows-alt-v"></i></th>
+                            <th>번호</th>
                             <th>작성자</th>
                             <th>제목</th>
                             <th>내용</th>
                             <th>카테고리</th>
-                            <th>상태/조회/추천<i id="status_arrow" class="fas fa-arrow-up"></i></th>
+                            <th>상태/조회/추천</th>
                             <th>등록일</th>
                             <th>수정일</th>
                         </tr>
