@@ -4,7 +4,7 @@
     <select id="selectNewsList" resultType="com.ohtae.crypto.data.NewsPageInfoVO">
         select 
             npi_seq,npi_title,npi_view,npi_reg_dt,npi_link,
-            npi_author,npi_company,npi_content
+            npi_company,npi_content
         from news_page_info 
         where npi_title like #{keyword}
         order by ${order} 
@@ -14,12 +14,11 @@
         select count(*) from news_page_info
     </select>
     
-     
     <insert id="insertNewsInfo">
         insert into news_page_info
-            (npi_seq,npi_title,npi_view,npi_reg_dt,npi_link,npi_author,npi_company,npi_content)
+            (npi_seq,npi_title,npi_view,npi_reg_dt,npi_link,npi_company,npi_content)
         values
-            (#{npi_seq},#{npi_title},#{npi_view},#{npi_reg_dt},#{npi_link},#{npi_author},#{npi_company},#{npi_content})
+            (#{npi_seq},#{npi_title},#{npi_view},#{npi_reg_dt},#{npi_link},#{npi_company},#{npi_content})
     </insert>
     
 

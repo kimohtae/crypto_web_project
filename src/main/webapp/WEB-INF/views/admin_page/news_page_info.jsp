@@ -33,7 +33,6 @@
                     <thead>
                         <tr>
                             <th>번호</th>
-                            <th>작성자</th>
                             <th>회사</th>
                             <th>제목</th>
                             <th>내용</th>
@@ -51,7 +50,6 @@
                         <c:forEach items="${data.list}" var="li">
                             <tr id="${li.npi_seq}s" data-seq="${li.npi_seq}s" class="news_data">
                                 <td>${li.npi_seq}<input type="checkbox" style="display: none;"></td>
-                                <td>${li.npi_author}</td>
                                 <td>${li.npi_company}</td>
                                 <td>${li.npi_title}</td>
                                 <td>${li.npi_content}</td>
