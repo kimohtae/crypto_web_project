@@ -117,7 +117,7 @@
                                 </td>
                             </tr>
                             <tr class="modify_box" tr-seq="${li.mi_seq}" id="${li.mi_seq*10000000000}">
-                                <td><img src="/image/user/default.jpg" class="profile_img"></td>
+                                <td><img src="/image/user/${li.mi_image}" class="profile_img"></td>
                                 <td><input type="text" class="mod_id" placeholder="아이디"></td>
                                 <td><input type="text" class="mod_name" placeholder="이름"></td>
                                 <td><input type="text" class="mod_phone" placeholder="ex) 01012345678"></td>

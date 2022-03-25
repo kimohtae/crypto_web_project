@@ -54,4 +54,8 @@ public class StatisticsService {
         stMapper.updateStatisticsStatus(stData);
         return "상태가 변경되었습니다.";
     }
+    public String updateStatisticsInfo(StatisticsInfoVO data){
+        stMapper.updateStatisticsInfo(data);
+        return "상태가 변경되었습니다.";
+    }
 }

@@ -39,7 +39,7 @@
                         <select id="keyword_type">
                             <option value="pi_title">제목</option>
                             <option value="pi_contents">내용</option>
-                            <option value="mi_name">작성자</option>
+                            <option value="mi_id">작성자</option>
                         </select>
                         <input type="text" class="search_post_box">
                         <button class="search_post_btn"><i class="fas fa-search"></i></button>

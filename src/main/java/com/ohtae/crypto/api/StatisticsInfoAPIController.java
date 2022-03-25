@@ -28,6 +28,10 @@ public class StatisticsInfoAPIController {
     public String putAddStatisticsInfo(@RequestBody StatisticsInfoVO data){
         return stService.insertStatisticsInfo(data);
     }  
+    @PatchMapping("/modify")
+    public String patchStatisticsInfo(@RequestBody StatisticsInfoVO data){
+        return stService.updateStatisticsInfo(data);
+    }  
 
     @PatchMapping("/status")
     public String patchStatisticStatus(@RequestParam Integer seq){

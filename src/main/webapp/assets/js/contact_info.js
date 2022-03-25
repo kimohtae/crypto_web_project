@@ -60,7 +60,7 @@ $(function(){
             if(confirm("정말 등록하시겠습니까?")==false) return;
             let data = {
                 "cri_ci_seq":check,
-                "cri_mi_seq":"13",
+                "cri_mi_seq":login_user_mi_seq,
                 "cri_contents":$("#admin_reply_text").val()
             }
             $.ajax({

@@ -66,7 +66,11 @@ public class MemberService {
         }
 
         MemberInfoVO member_info = Mmapper.selectLoginInfo(data.getMi_id());
-        
+        if(member_info == null){
+            resultMap.put("status", false);
+            resultMap.put("message", "잘못된 아이디 혹은 비밀번호입니다.");
+            return resultMap;
+        }
         String origin_pwd = member_info.getMi_pwd();
         String input_pwd = AESAlgorithm.Encrypt(data.getMi_pwd());
 
@@ -120,6 +124,7 @@ public class MemberService {
         }
         try{
             data.setMi_pwd(AESAlgorithm.Encrypt(data.getMi_pwd()));
+            data.setMi_image("default.jpg");
             Mmapper.insertMemberInfo(data);
         }catch(Exception e){
             map.put("status", false);

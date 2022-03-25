@@ -19,4 +19,5 @@ public interface StatisticsInfoMapper {
     void deleteStatisticsInfo(Integer seq);
     
     void updateStatisticsStatus(StatisticsInfoVO data);
+    void updateStatisticsInfo(StatisticsInfoVO data);
 }

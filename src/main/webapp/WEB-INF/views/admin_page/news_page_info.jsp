@@ -65,7 +65,7 @@
                 <div class="pager_wrap">
                     <span id="page_left_move"><</span>
                     <c:forEach begin="1" end="${data.page}" var="i">
-                        <a id="${i}" href="/admin/contact?offset=${(i-1)*20}">${i}</a>
+                        <a id="${i}" href="/admin/news?offset=${(i-1)*30}">${i}</a>
                     </c:forEach>
                     <span id="page_right_move">></span>
                 </div>

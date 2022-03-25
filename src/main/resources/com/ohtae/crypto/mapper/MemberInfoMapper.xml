@@ -23,8 +23,8 @@
     
     
     <insert id="insertMemberInfo">
-        insert into member_info(mi_id,mi_pwd,mi_email,mi_phone,mi_name,mi_birth) 
-        values(#{mi_id},#{mi_pwd},#{mi_email},#{mi_phone},#{mi_name},#{mi_birth})
+        insert into member_info(mi_id,mi_pwd,mi_email,mi_phone,mi_name,mi_birth,mi_image) 
+        values(#{mi_id},#{mi_pwd},#{mi_email},#{mi_phone},#{mi_name},#{mi_birth},#{mi_image})
     </insert>
     <insert id="insertMemberHis">
         insert into member_history(mh_content,mh_type,mh_mi_seq)

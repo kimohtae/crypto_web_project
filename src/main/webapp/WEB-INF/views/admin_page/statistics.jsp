@@ -74,7 +74,10 @@
                                 <td>${item.si_title}</td>
                                 <td>${item.si_contents}</td>
                                 <td>${item.sti_name}</td>
-                                <td>${item.si_status}/${item.si_view}/${item.si_like}</td>
+                                <td>
+                                    <c:if test="${item.si_status==1}">공개</c:if>
+                                    <c:if test="${item.si_status==2}">비공개</c:if>
+                                    /${item.si_view}/${item.si_like}</td>
                                 <td>
                                     <fmt:formatDate value="${item.si_reg_dt}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                 </td>

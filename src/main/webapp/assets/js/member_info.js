@@ -81,7 +81,7 @@ $(function(){
                 "mi_birth":$("#input_birth").val(),
                 "mi_email":$("#input_email").val(),
                 "mi_name":$("#input_name").val(),
-                "mi_pwd":$("#input_pwd").val()
+                "mi_pwd":$("#input_pwd").val(),
             }
 
             $.ajax({
@@ -143,7 +143,7 @@ $(function(){
                     "mi_phone":$("#"+select+" .mod_phone").val(),
                     "mi_birth":$("#"+select+" .mod_birth").val(),
                     "mi_email":$("#"+select+" .mod_email").val(),
-                    "mi_image":$("#"+select+" .mod_image").val()
+                    "mi_image":"default.jpg"
                 }
                 
                 $.ajax({

@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/assets/css/contact_info.css">
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
     <script src="/assets/js/contact_info.js"></script>
-
+    <script>
+        let login_user_mi_seq = "${login_info.mi_seq}"
+    </script>
         
 
 </head>

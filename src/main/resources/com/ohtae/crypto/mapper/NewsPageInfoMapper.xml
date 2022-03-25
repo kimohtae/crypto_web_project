@@ -7,7 +7,7 @@
             npi_company,npi_content
         from news_page_info 
         where npi_title like #{keyword}
-        order by ${order} 
+        order by npi_seq desc
         limit 30 offset #{offset}
     </select>
     <select id="selectNewsCounts" resultType="java.lang.Integer">

@@ -72,6 +72,11 @@
         </if>
         
     </update>
+    <update id="updateStatisticsInfo">
+        update statistics_info set 
+        si_title = #{si_title}, si_sti_seq = #{si_sti_seq}, si_contents=#{si_contents}, si_img_url=#{si_img_url}
+        where si_seq = #{si_seq}
+    </update>
 
 
 

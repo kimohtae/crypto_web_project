@@ -208,18 +208,22 @@ $(function(){
             alert("카테고리를 선택해 주세요")
             return;
         }
+        if(uploaded_img == null){
+            uploaded_img = $("#si_img_wrap").val()
+        }
 
         let data = {
             "si_mi_seq":mi_seq,
-            "si_title":$("#add_popup_title").val(),
-            "si_sti_seq":$("#add_popup_cat").val(),
-            "si_contents":$("#add_content_wrap").val(),
+            "si_seq":$("#popup_modify_btn").attr("data-seq"),
+            "si_title":$("#popup_title").val(),
+            "si_sti_seq":$("#popup_cat").val(),
+            "si_contents":$("#content_wrap").val(),
             "si_img_url":uploaded_img
         }
         $.ajax({
-            url:"/admin/statistics/add",
+            url:"/admin/statistics/modify",
             data:JSON.stringify(data),
-            type:"put",
+            type:"patch",
             contentType:"application/json",
             success:function(r){
                 alert(r);
@@ -245,7 +249,9 @@ $(function(){
         
         $(".post_list_table tbody tr").removeClass("active")
         $(".popup_container").css("display","block")
+        $(".popup_container").css("display","block")
         $(".reply_popup_wrap").css("display","block")
+        $("#popup_modify_btn").attr("data-seq",check)
         
         $.ajax({
             url:"/admin/statistics/select?seq=" + check,
@@ -253,7 +259,7 @@ $(function(){
             success:function(r){
                 $("#popup_number").html("번호: "+r.si_seq);
                 $("#popup_author").html("작성자: "+r.mi_name);
-                $("#popup_title").val("제목: "+r.si_title);
+                $("#popup_title").val(r.si_title);
                 $("#content_wrap").val(r.si_contents);
                 $("#popup_cat").val(r.si_sti_seq);
                 let status = r.si_status==1?"공개":"비공개";
